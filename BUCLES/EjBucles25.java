@@ -20,6 +20,7 @@ public class EjBucles25 { // Numero del revés
             numero = numero/10;
         }
         System.out.println(num2);
+        System.out.println("Hola");
 
         sc.close();
     }
