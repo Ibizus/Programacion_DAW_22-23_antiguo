@@ -1,8 +1,6 @@
 package CONDICIONALES;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class EjConcierto { // Recaudación de un concierto
     public static void main(String[] args) {
         

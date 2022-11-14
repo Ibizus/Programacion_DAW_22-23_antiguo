@@ -5,7 +5,6 @@ import java.time.LocalTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
 
@@ -79,7 +78,6 @@ public class ManejoFechas {
         System.out.println("Quedan " + hastaFinAno.getYears() + " años, "
                              + hastaFinAno.getMonths()+ 
                         " meses y "+ hastaFinAno.getDays() + " días") ;                
-
 
         
     }

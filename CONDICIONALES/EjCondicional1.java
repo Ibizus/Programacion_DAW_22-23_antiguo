@@ -1,6 +1,5 @@
 package CONDICIONALES;
 import java.util.Scanner;
-import java.time.*;
 
 public class EjCondicional1 {
     public static void main(String[] args) {

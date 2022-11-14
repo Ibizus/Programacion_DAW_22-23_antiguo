@@ -8,7 +8,6 @@ public class EjCondicional9 { // Realiza un programa que resuelva una ecuación 
         Scanner sc = new Scanner(System.in);
 
         double resultadoX = 0;
-        double resultadoX2 = 0;
 
         System.out.println("Este programa resuelve ecuaciones de segundo grado del tipo ax2 + bx + c = 0");
         System.out.println("Por favor, introduce el valor de a:");

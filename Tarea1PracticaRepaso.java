@@ -31,11 +31,6 @@ public class Tarea1PracticaRepaso {
         // Aplico mi formato e imprimo:
         System.out.println("\"El examen es el: "+fechaExamen.format(miFormato)+"\"");
 
-
-
-
-
-
-
+        sc.close();
     }
 }

@@ -22,7 +22,7 @@ public class EjercicioMath7{ // Tres jugadores tiran un dado (1 al 6)
         resultadoMaximo = Math.max(resultadoMaximo, jugador3);
 
         // Tambien se podría hacer todo en una misma línea:
-        int resultadoMax2 = Math.max(jugador3, Math.max(jugador1, jugador2));
+        // int resultadoMax2 = Math.max(jugador3, Math.max(jugador1, jugador2));
 
         System.out.println("La tirada mayor es: " + resultadoMaximo);
 

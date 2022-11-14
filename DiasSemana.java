@@ -43,6 +43,6 @@ public class DiasSemana {
             System.out.println("Te quedan "+diasHastaFinDeSemana+" días para el fin de semana.");
         }
 
-        
+        sc.close();
     }
 }

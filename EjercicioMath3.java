@@ -1,4 +1,3 @@
-import javax.sound.sampled.SourceDataLine;
 
 public class EjercicioMath3 {
     public static void main(String[] args) {

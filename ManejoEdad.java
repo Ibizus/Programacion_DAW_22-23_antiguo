@@ -30,11 +30,6 @@ public class ManejoEdad {
 
         System.out.println("Quedan "+diasHastaProxCumple+" para tu cumple.");
 
-
-
-
-
-
-
+        sc.close();
     }
 }

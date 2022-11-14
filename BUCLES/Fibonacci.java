@@ -10,7 +10,6 @@ public class Fibonacci {
         int num1 = 0;
         int num2 = 1;
         int nuevo = 0;
-        int suma = 0;
 
         System.out.println("Serie de FIBONACCI");
         System.out.println("-------------------");

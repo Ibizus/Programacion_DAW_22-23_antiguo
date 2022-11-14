@@ -38,8 +38,8 @@ public class EjFibonacci {
                     num2 = suma;
                 }
                 break;
-            
         }
+        sc.close();
     }
 
 }
