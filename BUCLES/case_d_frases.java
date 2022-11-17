@@ -24,7 +24,7 @@ public class case_d_frases {
 
         System.out.println("EMPIEZA EL BUCLE");
         // Bucle para buscar el resto de posiciones: (siempre que lo haya encontrado una primera vez)
-        while (posicionCaracterBuscado > 0)
+        while (posicionCaracterBuscado >= 0)
         {
             contador++; // (Si entra es que ha encontrado una coincidencia)
 
@@ -39,6 +39,56 @@ public class case_d_frases {
             nuevaPosicion = parteSiguiente.indexOf(caracterBuscado);
 
             System.out.println("Nuevo valor posición " + (nuevaPosicion+1));
+
+
+
+
+
+
+            // OPCION 2:
+            // Si hago Indexof(CaracterBuscado, InicioBusqueda) -> empieza por donde yo le diga
+            // Con un bucle puedo introducir como inicioBusqueda la última posición encontrada
+            int contador2 = 0;
+            int posicion2 = frase.indexOf(caracterBuscado);
+            String posicionesEncontradas = "";
+
+            while (contador2 != -1)
+            {
+                posicion2 = frase.indexOf(caracterBuscado, posicionCaracterBuscado+1); // De esta manera busco desde la ultima posicón encontrada.
+                contador2++;
+                posicionesEncontradas = posicionesEncontradas + " " + posicion2;
+            }
+
+            System.out.println("El caracter aparece" + contador2);
+            System.out.println("En las posiciones: " + posicion2);
+
+
+
+
+
+
+            // OPCION 3: (la güena)
+            // Otra opción es charAt(contador) == 'a'
+            int contadorApariciones = 0;
+            String cadenaApariciones = "";
+
+            for (int aux=0; aux <= frase.length(); aux++)
+            {
+                if (frase.charAt(aux) == caracterBuscado)
+                {
+                    contadorApariciones++;
+                    cadenaApariciones = cadenaApariciones + " " + aux;
+                }
+            }
+            System.out.println("El caracter buscado aparece " + contadorApariciones);
+            System.out.println("En la/s posicion/es: " + cadenaApariciones);
+
+
+
+
+
+
+
 
             // Si lo ha encontrado lo añado al String declarado:
             if (nuevaPosicion > 0)

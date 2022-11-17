@@ -50,7 +50,7 @@ public class MenuFrase_HectorLopez {
                             {
                                 System.out.println("La frase actual es: \"" + frase + "\"");
                             }
-                            else 
+                            else
                             {
                                 System.out.println("La frase esta vacía");
                             }
@@ -130,8 +130,12 @@ public class MenuFrase_HectorLopez {
                 }
 
             } // Fin IF/ELSE
-            System.out.println("Pulse la tecla ENTER para continuar...");
-            sc.nextLine();
+            
+            if (!salida) // Para no mostrar el Enter cuando introduzco la Opcion Salir 's'
+            {
+                System.out.println("Pulse la tecla ENTER para continuar...");
+                sc.nextLine();
+            }
 
         } // Fin bucle principal
 
