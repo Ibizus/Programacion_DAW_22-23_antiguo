@@ -1,0 +1,89 @@
+/*** Reseteo de Propiedades ***/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*** Esto es para que si hay padding y border se incluya dentro del calculo (no se salga si pongo el % ajustado sin tener que tener en cuenta bordes)***/
+}
+
+/************ LAYOUT  *************/
+/************************ display/position/float **********************/
+nav li{
+    display: inline-block;
+}
+nav article{
+    position:relative
+}
+#Categorias article {
+    position: relative;
+}
+
+
+
+/****************** height/width/padding/border/margin *******************/
+
+body {
+
+}
+nav {
+
+}
+
+header {
+
+}
+#Categorias article {
+    width: 24%;
+}
+footer {
+
+}
+
+
+/************************* Propiedades Generales *********************/
+a{  /*a:link, a:visited, a:active*/
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:Reclame Script,Helvetica,Verdana;
+    font-style:italic;
+    font-weight:bold;
+  }
+nav ul{ /* Solo para el NAV, dejamos los demas con el punto*/
+    list-style-type: none;
+}
+
+
+/********* BODY *********/
+body {
+    font-family:Sarabun,sans-serif;
+}
+
+
+
+/********* NAV **********/
+nav{
+    text-align: right;
+}  
+
+
+/*** HEADER ***/
+header {
+    background-color: #B0D217;
+}
+
+
+
+/*** SECTION ***/
+section #Portada {
+    background-image: url(images/Portada.jpg);
+}
+
+
+
+/******** FOOTER *********/
+footer {
+    background: #d2e1f6 ;
+}
+
