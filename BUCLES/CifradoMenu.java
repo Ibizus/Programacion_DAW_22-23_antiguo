@@ -7,6 +7,9 @@ public class CifradoMenu {
         
         Scanner sc = new Scanner(System.in);
 
+        final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+        final String ANSI_RESET = "\u001B[0m";
+
         // VARIABLES:
         int opcion = 0;
         int factorCifrado = 0;
@@ -21,12 +24,12 @@ public class CifradoMenu {
         // BUCLE MENU
         while (!salir)
         {
-            System.out.println("PROGRAMA COMPUTACIONAL DE CIFRADO DE SEGURIDAD EXTREMA");
+            System.out.println(ANSI_GREEN_BACKGROUND + "PROGRAMA COMPUTACIONAL DE CIFRADO DE SEGURIDAD EXTREMA" + ANSI_RESET);
 
             System.out.println("Elige la opción que quieres realizar:");
-            System.out.println("1 para CIFRAR");
-            System.out.println("2 para DESCIFRAR");
-            System.out.println("3 para SALIR");
+            System.out.println("\t1 -> para CIFRAR");
+            System.out.println("\t2 -> para DESCIFRAR");
+            System.out.println("\t3 -> para SALIR");
             opcion = sc.nextInt();
         // limpiar Buffer:
             sc.nextLine();
@@ -44,6 +47,7 @@ public class CifradoMenu {
             
                     System.out.print(factorCifrado);
                     // Bucle que cambia cada caracter:
+                    contador = 0;
                     while (contador < texto.length())
                     {
                         caracterRevisado = texto.charAt(contador);
@@ -60,6 +64,7 @@ public class CifradoMenu {
                     break;
 
                 case 2:
+                    contador = 0;
                     System.out.println("Introduce el texto cifrado:");
                     texto = sc.nextLine().toUpperCase();
                     factorCifrado = Character.getNumericValue(texto.charAt(0));
@@ -69,8 +74,8 @@ public class CifradoMenu {
                     while (contador < texto.length())
                     {
                         caracterRevisado = texto.charAt(contador);
-                        numeroCaracter = (int)caracterRevisado-factorCifrado;
-                        if (numeroCaracter < 'A')
+                        numeroCaracter = (int)caracterRevisado - factorCifrado;
+                        if (numeroCaracter < 65)
                         {
                             numeroCaracter = numeroCaracter+26;
                         }
