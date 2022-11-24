@@ -22,6 +22,9 @@ public class PiramideLetras {
                 char nuevoCaracter = (char)((int)caracterInicio + aux2);
                 linea = linea + nuevoCaracter;
             }
+
+            System.out.println("*");
+
         }
 
 
