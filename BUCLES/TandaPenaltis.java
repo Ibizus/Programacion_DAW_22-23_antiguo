@@ -28,7 +28,7 @@ public class TandaPenaltis {
         System.out.println("EMPIEZA LA TANDA DE PENALTIS\n\n");
 
         // BUCLE TANDA DE PENALTIS:
-        while (totalTiros <= 10)
+        while (totalTiros < 10)
         {
             System.out.println(nombre + "\t" + jugadaUsuario);
             System.out.println(cpu + "\t" + jugadaCPU + "\n");
@@ -36,7 +36,7 @@ public class TandaPenaltis {
                 // Según el turno imprimo una cosa diferente u otra:
             if (turnoJugador == true) 
             {
-                System.out.println(nombre + " tira (I (izquierda), D (derecha) o C (centro)\n");
+                System.out.println(nombre + " tira (I (izquierda), D (derecha) o C (centro)");
             }
             else
             {
@@ -57,7 +57,7 @@ public class TandaPenaltis {
                     tipoTiro = 3;
                     break;
                 default:
-                    System.out.println("Introduce una opción correcta");
+                    System.out.println("Valor incorrecto");
             }
 
                 // Genero el tiro de CPU con un random
@@ -76,7 +76,8 @@ public class TandaPenaltis {
                 }
                 else if (factorPifia <= 2)
                 {
-                    System.out.println("Nooooo!! Fuera!! Se ha marcado un Sergio Ramos!!!");
+                    System.out.println("¡¡Pifia!! se va fuera!! Se ha marcado un Sergio Ramos!!");
+                    jugadaUsuario = jugadaUsuario.replaceFirst("-", "0");
                 }
                 else
                 {
@@ -96,7 +97,8 @@ public class TandaPenaltis {
                 }
                 else if (factorPifia <= 2)
                 {
-                    System.out.println("Nooooo!! Fuera!! Se ha marcado un Sergio Ramos!! Menuda pifia!!!!");
+                    System.out.println("¡¡Pifia!! se va fuera!! Se ha marcado un Sergio Ramos!!");
+                    jugadaCPU = jugadaCPU.replaceFirst("-", "0");
                 }
                 else
                 {
@@ -109,12 +111,24 @@ public class TandaPenaltis {
             }
             totalTiros = contadorTirosJugador + contadorTirosCPU;
 
-            if (totalTiros == 10 && contadorGolesJugador == contadorGolesCPU)
+            if (totalTiros == 10)
             {
-                totalTiros = totalTiros-2;
-                jugadaUsuario += " -";
-                jugadaCPU += " -";
+               if (contadorGolesJugador == contadorGolesCPU)
+               {
+                    totalTiros = totalTiros-2;
+                    jugadaUsuario += " -";
+                    jugadaCPU += " -";
+               }
+               else if (contadorGolesJugador > contadorGolesCPU)
+               {
+                    System.out.println("\n" + nombre + " gana la tanda de penaltis");
+               }
+               else 
+               {
+                    System.out.println("\n" + cpu + " gana la tanda de penaltis");
+               }
             }
+
         }
 
         sc.close();
