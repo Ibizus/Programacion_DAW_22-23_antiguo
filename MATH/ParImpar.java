@@ -1,7 +1,7 @@
 package MATH;
 import java.util.Scanner;
 
-public class Ejercicio9 { // Numero par o impar
+public class ParImpar { // Numero par o impar
     
     public static void main(String[] args){
 

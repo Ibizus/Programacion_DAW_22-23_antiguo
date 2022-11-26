@@ -63,14 +63,6 @@ public class Calculadora {
 
         } while (operacion != 0);
 
-        
-
-
-
-
-
-
-
 
         sc.close();
     }
