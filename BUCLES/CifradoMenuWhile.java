@@ -2,7 +2,7 @@ package BUCLES;
 
 import java.util.Scanner;
 
-public class CifradoMenu {
+public class CifradoMenuWhile { // Con While: elimino espacios, no forma palabras sueltas
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -52,7 +52,7 @@ public class CifradoMenu {
                     {
                         caracterRevisado = texto.charAt(contador);
                         numeroCaracter = (int)caracterRevisado +factorCifrado;
-                        if (numeroCaracter > 'Z')
+                        if (numeroCaracter > 'Z') // Tambien se puede poner 90
                         {
                             numeroCaracter = numeroCaracter-26;
                         }

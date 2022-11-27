@@ -2,7 +2,7 @@ package BUCLES;
 
 import java.util.Scanner;
 
-public class case_d_frases {
+public class Frase_case_d {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);

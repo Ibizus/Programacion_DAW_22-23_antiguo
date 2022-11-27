@@ -2,7 +2,7 @@ package BUCLES;
 
 import java.util.Scanner;
 
-public class EjBucles24 { // Piramide de números
+public class PiramideNumeros { // Piramide de números
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
