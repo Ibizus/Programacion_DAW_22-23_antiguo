@@ -13,8 +13,21 @@ nav li{
 nav article{
     position:relative
 }
+#Portada{
+    background-image: url(images/Portada.jpg);
+    object-fit: cover;
+}
+#Opiniones article{
+    display: inline-block;
+}
 #Categorias article {
-    position: relative;
+    display: inline-block;
+}
+#Destacados article{
+    display: inline-block;
+}
+footer article{
+    display: inline-block;
 }
 
 
@@ -22,20 +35,48 @@ nav article{
 /****************** height/width/padding/border/margin *******************/
 
 body {
-
+    border: red solid 2px;
 }
 nav {
-
+    border: blue solid 2px;
 }
-
 header {
-
+    border: orange solid 2px;
+}
+#Portada{
+    margin: 2%;
+    height: 500px;
+    border: darkgreen solid 2px;
+}
+#Quienes_somos{
+    border: lightcoral solid 2px;
+}
+#Opiniones article{
+    width: 33%;
+    border: lightskyblue solid 2px;
+}
+#Categorias{
+    border: darkcyan solid 2px;
+    height: 600px;
 }
 #Categorias article {
-    width: 24%;
+    width: 22%;
+    margin: auto;
+    border: brown solid 2px;
 }
-footer {
-
+#Destacados{
+    border: lightsalmon solid 2px;
+}
+#Destacados article{
+    width: 24%;
+    border: pink solid 2px;
+}
+footer{
+    border: green solid 2px;
+}
+footer article{
+    width: 24%;
+    border: purple solid 2px;
 }
 
 
@@ -53,13 +94,16 @@ h1, h2, h3, h4, h5, h6 {
 nav ul{ /* Solo para el NAV, dejamos los demas con el punto*/
     list-style-type: none;
 }
+img, picture, video, iframe, figure{
+    max-width: 100%;
+    object-fit:cover; /* En el caso de poner altura a una imagen hace que se escale */
+}
 
 
 /********* BODY *********/
 body {
     font-family:Sarabun,sans-serif;
 }
-
 
 
 /********* NAV **********/
@@ -79,11 +123,23 @@ header {
 section #Portada {
     background-image: url(images/Portada.jpg);
 }
-
-
-
+#Quienes_somos{
+    background-color: #B0D217;
+}
+#cat1{
+    background-color: #555555;
+}
+#cat2{
+    background-color: #B0D217;
+}
+#cat3{
+    background-color: #E8C3AC;
+}
+#cat4{
+    background-color: #E3F0A9;
+}
 /******** FOOTER *********/
 footer {
-    background: #d2e1f6 ;
+    background-color: #B0D217;
 }
 
