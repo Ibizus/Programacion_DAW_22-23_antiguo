@@ -1,6 +1,6 @@
 package STRING;
 
-public class EjercicioString10 { // dado un texto, trocearlo en frases
+public class ContarFrases { // dado un texto, trocearlo en frases
     
     public static void main(String[] args) {
         

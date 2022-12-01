@@ -9,6 +9,8 @@ public class Ej3Exam2 {
 
         boolean salida = false;
         String frase = "";
+        int contador = 0;
+        int contador2 = 0;
 
         // Bucle principal
         while (salida == false)
@@ -54,17 +56,41 @@ public class Ej3Exam2 {
                             }
                         break;
 
-                    case 'C': // Falta buscar cadena y numero de apariciones:
+                    case 'C': 
+                        System.out.println("¿Que palaba quieres buscar?");
+                        String cadenaBuscada = sc.nextLine().toLowerCase();
 
+                    // Buscar palabras completas y su posición (con Array):
+                        String[] buscarPalabras = frase.split(" ");
 
+                        for (int aux = 0; aux<(buscarPalabras.length); aux++)
+                        {
+                            if (buscarPalabras[aux].toString().compareToIgnoreCase(cadenaBuscada) == 0)
+                            {
+                                System.out.println("La palabra aparece en la posición: " + aux);
+                                contador++;
+                            }
+                        }
+                        System.out.println("La palabra \"" + cadenaBuscada + "\" aparece: " + contador + " veces");
 
+                    // Buscar cadena dentro del texto completo:
+                        int posicion = 0;
 
-
-
+                        for (int aux=0; aux<frase.length(); aux++)
+                        {
+                            if (frase.toLowerCase().indexOf(cadenaBuscada, posicion) >= 0)
+                            {
+                                posicion = posicion + frase.toLowerCase().indexOf(cadenaBuscada, posicion);
+                                System.out.println("La cadena aparece en la posición: " + (frase.toLowerCase().indexOf(cadenaBuscada, posicion)-posicion));
+                                posicion++;
+                                contador2++;
+                            }
+                        }
+                        System.out.println("La cadena \"" + cadenaBuscada + "\" aparece: " + contador2 + " veces");
 
                         break;
 
-                    case 'D': // Recorrer palabras en orden inverco con posicion y longitud
+                    case 'D': // Recorrer palabras en orden inverso con posicion y longitud
 
                         // Creo un Array de palabras separando por cada espacio
                         String[] palabrasFrase = frase.split(" ");
@@ -74,6 +100,7 @@ public class Ej3Exam2 {
                             System.out.println((aux) + "- " + palabrasFrase[aux].toString() + "(" + palabrasFrase[aux].length() + " letras)" );
                         }
                         break;
+
                     case 'E': // Invertir frase
                         String[] palabrasSueltas = frase.split(" ");
                         String invertida = "La frase invertida es: ";
@@ -83,7 +110,6 @@ public class Ej3Exam2 {
                             invertida = invertida + " " + palabrasSueltas[aux].toString();
                         }
                         System.out.println(invertida);
-
                         break;
 
                     case 'F':
