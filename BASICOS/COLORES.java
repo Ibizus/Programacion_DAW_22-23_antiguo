@@ -22,9 +22,7 @@ public class COLORES { // Introduccion de colores y reseteo:
         final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
         final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
         final String ANSI_RED_BACKGROUND = "\u001B[41m";
-
-
-
+        
 
         final String ANSI_RESET = "\u001B[0m";
 

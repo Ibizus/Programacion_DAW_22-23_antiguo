@@ -2,11 +2,12 @@ package EXAMEN;
 
 import java.util.Scanner;
 
-public class Ej1Exam2 { 
+public class Ejercicio1_HectorLopez {
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
 
+        // Constantes:
         final double PLATO1 = 5;
         final double PLATO2 = 4;
         final double PLATO3 = 4.5;
@@ -17,18 +18,24 @@ public class Ej1Exam2 {
         final double PLATO8 = 1.5;
         final double PLATO9 = 1.25;
         final double PLATO10 = 2;
-        
+        final String ANSI_RED_BACKGROUND = "\u001B[41m";
+        final String ANSI_RESET = "\u001B[0m";
+
+        // Variables:
         boolean salir = false;
         double precio = 0;
         int cantidad = 0;
         double precioTotal = 0;
         String nomPlato = "";
+        int contadorPrimeros = 0;
+        int contadorSegundos = 0;
+        int contadorPostres = 0;
         String salidaTicket1 = "";
         String salidaTicket2 = "";
         String salidaTicket3 = "";
 
-
-        System.out.println("**** RESTAURANTE VEGA DE MIJAS ****");
+        // Menu:
+        System.out.println("\u001B[41m"+"**** RESTAURANTE VEGA DE MIJAS ****"+"\u001B[0m");
         System.out.println("-----------------------------------");
         System.out.println("Primeros platos:");
         System.out.println(" 1. Salmorejo (5€)");
@@ -48,7 +55,7 @@ public class Ej1Exam2 {
 
         while (!salir)
         {
-            System.out.println("Selecciona la opción deseada por el cliente:");
+            System.out.println("Selecciona la opción deseada:");
             int opcion = sc.nextInt();
             switch (opcion)
             {
@@ -96,30 +103,34 @@ public class Ej1Exam2 {
                     break;
             }
 
-            if (opcion >=1 && opcion <=10)
+            if (opcion >=1 && opcion <=10) // CONTROL DE OPCION CORRECTA
             {
                 System.out.println("Cantidad:");
                 cantidad = sc.nextInt();
 
-                if (opcion >=1 && opcion <=3)
+                if (opcion >=1 && opcion <=3) // PRIMEROS PLATOS
                 {
                     salidaTicket1 = salidaTicket1 + "" + nomPlato + " x " + cantidad + "\n";
+                    contadorPrimeros++;
                 }
-                else if (opcion >=4 && opcion <=7)
+                else if (opcion >=4 && opcion <=7) // SEGUNDOS PLATOS
                 {
-                    if (cantidad>2)
+                    if (cantidad>2) // DESCUENTO CANTIDADES
                     {
                         precio = precio -1;
                     }
                     salidaTicket2 = salidaTicket2 + "" + nomPlato + " x " + cantidad + "\n";
+                    contadorSegundos++;
                 }
-                else if (opcion >=8 && opcion <=10)
+                else if (opcion >=8 && opcion <=10) // POSTRES
                 {
                     salidaTicket3 = salidaTicket3 + "" + nomPlato + " x " + cantidad + "\n";
+                    contadorPostres++;
                 }
 
                 precioTotal = precioTotal + (precio*cantidad);
             }
+            
             else if (opcion == 0)
             {
                 salir = true;
@@ -128,7 +139,10 @@ public class Ej1Exam2 {
             {
                 System.out.println("Opción incorrecta");
             }
-        }
+
+        }// FIN BUCLE
+
+        // DESCUENTO POR PRECIO TOTAL DEL PEDIDO:
         if (precioTotal >= 20 && precioTotal <=30)
         {
             precioTotal = precioTotal-2;
@@ -142,10 +156,20 @@ public class Ej1Exam2 {
             precioTotal = precioTotal-5;
         }
         
+        // SALIDA IMPRESIÓN DE TICKET:
         System.out.println("----------------------");
-        System.out.println("** Primeros platos\n" + salidaTicket1);
-        System.out.println("** Segundos platos\n" + salidaTicket2);
-        System.out.println("** Postres\n" + salidaTicket3);
+        if (contadorPrimeros>0)
+        {
+            System.out.println("** Primeros platos\n" + salidaTicket1);
+        }
+        if (contadorSegundos>0)
+        {
+            System.out.println("** Segundos platos\n" + salidaTicket2);
+        }
+        if (contadorPostres>0)
+        {
+            System.out.println("** Postres\n" + salidaTicket3);
+        }
         System.out.println("TOTAL A PAGAR: " + precioTotal + "€");
         System.out.println("----------------------");
 

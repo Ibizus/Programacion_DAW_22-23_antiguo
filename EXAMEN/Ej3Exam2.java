@@ -119,9 +119,10 @@ public class Ej3Exam2 {
 
                     default:
                         System.out.println("Opción no contemplada");
-                }
 
-            } // Fin IF/ELSE
+                }// Fin SWITCH
+
+            }// Fin IF/ELSE
 
             if (!salida) // Para no mostrar el Enter cuando introduzco la Opcion Salir 's'
             {
