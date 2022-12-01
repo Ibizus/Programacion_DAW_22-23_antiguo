@@ -20,7 +20,7 @@ nav article{
 #Opiniones article{
     display: inline-block;
 }
-#Categorias article {
+.cat {
     display: inline-block;
 }
 #Destacados article{
@@ -56,10 +56,14 @@ header {
     border: lightskyblue solid 2px;
 }
 #Categorias{
-    border: darkcyan solid 2px;
+    border: purple solid 2px;
     height: 600px;
 }
-#Categorias article {
+#CabeceraCat{
+    border: darkcyan solid 2px;
+    height: 320px;
+}
+.cat{
     width: 22%;
     margin: auto;
     border: brown solid 2px;
