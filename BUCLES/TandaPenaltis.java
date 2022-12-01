@@ -25,7 +25,7 @@ public class TandaPenaltis {
         System.out.println("¿Cuál es tu nombre?");
         String nombre = sc.nextLine();
 
-        System.out.println("EMPIEZA LA TANDA DE PENALTIS\n\n");
+        System.out.println("EMPIEZA LA TANDA DE PENALTIS\n");
 
         // BUCLE TANDA DE PENALTIS:
         while (totalTiros < 10)
@@ -48,20 +48,20 @@ public class TandaPenaltis {
             switch (tiroElegido)
             {
                 case "I":
-                    tipoTiro = 1;
+                    tipoTiro = 0;
                     break;
                 case "D":
-                    tipoTiro = 2;
+                    tipoTiro = 1;
                     break;
                 case "C":
-                    tipoTiro = 3;
+                    tipoTiro = 2;
                     break;
                 default:
                     System.out.println("Valor incorrecto");
             }
 
                 // Genero el tiro de CPU con un random
-            tiroCPU = (int)(Math.random()*3+1);
+            tiroCPU = (int)(Math.random()*3);
 
                 // Genero el factor de PIFIA:
             factorPifia = (int)(Math.random()*10+1);
@@ -88,7 +88,7 @@ public class TandaPenaltis {
                 contadorTirosJugador++;
                 turnoJugador = false;
             }
-            else
+            else if (turnoJugador == false) 
             {
                 if (tipoTiro == tiroCPU) // Controlo si hay GOL de CPU y modifico contadores:
                 {
@@ -111,25 +111,26 @@ public class TandaPenaltis {
             }
             totalTiros = contadorTirosJugador + contadorTirosCPU;
 
-            if (totalTiros == 10)
+            if (totalTiros == 10 && contadorGolesJugador == contadorGolesCPU)
             {
-               if (contadorGolesJugador == contadorGolesCPU)
-               {
-                    totalTiros = totalTiros-2;
-                    jugadaUsuario += " -";
-                    jugadaCPU += " -";
-               }
-               else if (contadorGolesJugador > contadorGolesCPU)
-               {
-                    System.out.println("\n" + nombre + " gana la tanda de penaltis");
-               }
-               else 
-               {
-                    System.out.println("\n" + cpu + " gana la tanda de penaltis");
-               }
+                System.out.println("EMPATE: otra ronda");
+                totalTiros = totalTiros-2;
+                jugadaUsuario += " -";
+                jugadaCPU += " -";
             }
-
         }
+
+        if (totalTiros == 10 && contadorGolesJugador > contadorGolesCPU)
+        {
+            System.out.print("\n" + nombre + " gana la tanda de penaltis");
+        }
+        else
+        {
+            System.out.print("\n" + cpu + " gana la tanda de penaltis");
+        }
+        System.out.println(" con " + Math.max(contadorGolesJugador, contadorGolesCPU) + " goles a " + Math.min(contadorGolesJugador, contadorGolesCPU));
+        System.out.println("\n" + nombre + "\t" + jugadaUsuario);
+        System.out.println(cpu + "\t" + jugadaCPU);
 
         sc.close();
     }

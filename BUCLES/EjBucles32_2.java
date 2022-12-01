@@ -23,7 +23,7 @@ public class EjBucles32_2 {
 
             if (resto % 2 == 0)
             {
-                listaPares = resto + " " + listaPares; // Sumo por delante al Sring y así no hay que darle la vuelta
+                listaPares = resto + " " + listaPares; // Sumo por delante al String y así no hay que darle la vuelta
                 suma = suma + resto;
             }
             // Actualiza condición:

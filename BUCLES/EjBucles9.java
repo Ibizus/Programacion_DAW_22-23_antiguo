@@ -2,7 +2,7 @@ package BUCLES;
 
 import java.util.Scanner;
 
-public class EjBucles9 {
+public class EjBucles9 { // contador de dígitos
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
