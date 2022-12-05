@@ -1,5 +1,7 @@
 package FUNCIONES;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class UtilesParaNumeros {
     
 
@@ -39,8 +41,8 @@ public class UtilesParaNumeros {
     {
         boolean resultado = true;
         int contador = 0;
-        int divisor=2;
-        while(contador<1 || divisor==(numero-1))
+        int divisor = 2;
+        while(contador<1 && divisor<numero)
         {
             if (numero%divisor==0)
             {
@@ -54,15 +56,85 @@ public class UtilesParaNumeros {
 
     static int siguientePrimo(int numero)
     {
-        numero = numero+1;
-        while (esPrimo(numero+1)==false)
+        int resultado = numero+1;
+        while (esPrimo(resultado)==false)
         {
-            numero++;
+            resultado++;
         }
-        return numero;
+        return resultado;
     }
 
+    static long potencia(int base, int exponente)
+    {
+        long resultado = 1;
 
+        if (exponente > 0)
+        {
+            for (int aux=1; aux<=exponente; aux++)
+            {
+                resultado = resultado * base;
+            }
+        }
+
+        return resultado;
+    }
+
+    static int digitos(int numero)
+    {
+        int contadorDigitos = 0;
+        while (numero > 0)
+        {
+            numero = numero/10;
+            contadorDigitos++;
+        }
+        return contadorDigitos;
+    }
+
+    static long digitoN(long numero, int posicion)
+    {
+        long resto = 0;
+        long numeroAlReves = UtilesParaNumeros.voltea(numero);
+
+        for (int aux = 0; aux<=posicion; aux++)
+        {
+            resto = numeroAlReves % 10;
+            numeroAlReves = numeroAlReves/10;
+        }
+        return resto;
+    }
+
+    static long posicionDeDigito(long numero, int digito)
+    {
+        int contadorPosicion = 0;
+        long volteado = UtilesParaNumeros.voltea(numero);
+
+        while (volteado%10!=digito && volteado>0)
+        {
+            volteado = volteado/10;
+            contadorPosicion++;
+        }
+        if (volteado == 0)
+        {
+            contadorPosicion = -1;
+        }
+        return contadorPosicion;
+    }
+
+    static long quitaPorDetras(long numero, int digitos)
+    {
+        return numero = numero/UtilesParaNumeros.potencia(10, digitos);
+    }
+
+    static long quitaPorDelante(long numero, int digitos)
+    {
+        long volteado = UtilesParaNumeros.voltea(numero);
+
+        volteado = volteado/UtilesParaNumeros.potencia(10, digitos);
+
+        long resultado = UtilesParaNumeros.voltea(volteado);
+
+        return resultado;
+    }
 
 
 }
