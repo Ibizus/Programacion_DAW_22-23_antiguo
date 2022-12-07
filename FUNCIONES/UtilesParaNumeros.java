@@ -1,7 +1,5 @@
 package FUNCIONES;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 public class UtilesParaNumeros {
     
 
@@ -33,8 +31,7 @@ public class UtilesParaNumeros {
             resto = numOperativo % 10;
             volteado = (volteado*10)+resto;
             numOperativo = numOperativo/10;
-        }
-        return volteado;
+        }class volteado;
     }
 
     static boolean esPrimo(int numero)
@@ -64,7 +61,7 @@ public class UtilesParaNumeros {
         return resultado;
     }
 
-    static long potencia(int base, int exponente)
+    static long potencia(long base, long exponente)
     {
         long resultado = 1;
 
@@ -79,7 +76,7 @@ public class UtilesParaNumeros {
         return resultado;
     }
 
-    static int digitos(int numero)
+    static long digitos(long numero)
     {
         int contadorDigitos = 0;
         while (numero > 0)
@@ -120,12 +117,12 @@ public class UtilesParaNumeros {
         return contadorPosicion;
     }
 
-    static long quitaPorDetras(long numero, int digitos)
+    static long quitaPorDetras(long numero, long digitos)
     {
         return numero = numero/UtilesParaNumeros.potencia(10, digitos);
     }
 
-    static long quitaPorDelante(long numero, int digitos)
+    static long quitaPorDelante(long numero, long digitos)
     {
         long volteado = UtilesParaNumeros.voltea(numero);
 
@@ -135,6 +132,57 @@ public class UtilesParaNumeros {
 
         return resultado;
     }
+
+    static long pegaPorDetras(long numInicial, long numPegado)
+    {
+        long digitosNumPegado = UtilesParaNumeros.digitos(numPegado);
+
+        numInicial = numInicial*UtilesParaNumeros.potencia(10, digitosNumPegado);
+
+        return numInicial = numInicial + numPegado;
+    }
+
+    static long pegaPorDelante(long numInicial, long numPegado)
+    {
+        long numReves = UtilesParaNumeros.voltea(numInicial);
+
+        long numNuevo = UtilesParaNumeros.pegaPorDetras(numReves, numPegado);
+
+        long numFinal = UtilesParaNumeros.voltea(numNuevo);
+
+        return numFinal;
+    }
+
+    static long trozoDeNumero(long numero, int pos1, int pos2)
+    {
+        long nuevoNumero = UtilesParaNumeros.quitaPorDetras(numero, (digitos(numero)-pos2)-1);
+
+        long trozoNum = UtilesParaNumeros.quitaPorDelante(nuevoNumero, pos1);
+
+        return trozoNum;
+    }
+
+    static String convierteEnPalotes(int numero)
+    {
+        String resultado = "";
+
+        long numeroDigitos = digitos(numero);
+
+        for(int aux=0; aux < numeroDigitos; aux++)
+        {
+            long digito = digitoN(numero, aux);
+            for(int i=1; )
+
+        }
+
+
+        int resto = n%10;
+
+
+
+        return resultado;
+    }
+
 
 
 }

@@ -1,8 +1,6 @@
 package FUNCIONES;
 
-import FUNCIONES.UtilesParaNumeros; // ARCHIVO PARA TESTAR FUNCIONES CREADAS EN MI LIBRERIA:
-
-public class PruebaFuncionesBasicas {
+public class PruebaFuncionesBasicas { // ARCHIVO PARA TESTAR FUNCIONES CREADAS EN MI LIBRERIA:
     public static void main(String[] args) {
         
         int base = 2;
@@ -25,7 +23,7 @@ public class PruebaFuncionesBasicas {
         System.out.println("-------------------------------");
 
         int numero3 = 1234567;
-        int numeroDigitos = UtilesParaNumeros.digitos(numero3);
+        long numeroDigitos = UtilesParaNumeros.digitos(numero3);
         System.out.println("número digitos: "+numeroDigitos);
 
         System.out.println("-------------------------------");
@@ -56,6 +54,22 @@ public class PruebaFuncionesBasicas {
 
         System.out.println("-------------------------------");
 
+        int numPegado = 888;
+        System.out.println("num a añadir: "+numPegado);
+        long resultado1 = UtilesParaNumeros.pegaPorDetras(numero6, numPegado);
+        System.out.println("Si pegas por detras "+numPegado+" a "+numero6+" queda: "+resultado1);
+
+        System.out.println("-------------------------------");
+
+        long resultado2 = UtilesParaNumeros.pegaPorDelante(numero6, numPegado);
+        System.out.println("Si pegas por delante "+numPegado+" a "+numero6+" queda: "+resultado2);
+
+        System.out.println("-------------------------------");
+
+        long resultado3 = UtilesParaNumeros.trozoDeNumero(numero6, 1, 3);
+        System.out.println("Si del numero "+numero6+" sacas el trozo entre posiciones 1 y 3 queda: "+resultado3);
+
+        System.out.println("-------------------------------");
 
 
     }
