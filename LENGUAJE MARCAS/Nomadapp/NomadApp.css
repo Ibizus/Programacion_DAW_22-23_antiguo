@@ -4,25 +4,43 @@
     margin: 0;
     box-sizing: border-box;/*** Esto es para que si hay padding y border se incluya dentro del calculo (no se salga si pongo el % ajustado sin tener que tener en cuenta bordes)***/
 }
+@font-face {
+    font-family: Reklame;
+    src: url(fonts/Reklame_Script_Bold/Reklame_Script_Bold.woff2) format('woff2'),
+    url(fonts/Reklame_Script_Bold/Reklame_Script_Bold.woff) format('woff');
+    font-style: italic;
+    font-weight: 700;
+}
+@font-face {
+    font-family: Sarabun;
+    src: url(fonts/Sarabun/Sarabun.woff2) format('woff2'),
+    url(fonts/Sarabun/Sarabun.woff) format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
 
 /************ LAYOUT  *************/
 /************************ display/position/float **********************/
 nav li{
-    display: inline-block;
+    display:inline-block;
 }
 nav article{
     position:relative
 }
 #Portada{
     background-image: url(images/Portada.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
     object-fit: cover;
+}
+#Portada h1{
+    position:
 }
 #Opiniones article{
     display: inline-block;
 }
 .cat {
     display: inline-block;
-
 }
 #Destacados article{
     display: inline-block;
@@ -45,9 +63,8 @@ header {
     border: orange solid 2px;
 }
 #Portada{
-    margin: 2%;
+    margin: 0% 5% 2%;
     height: 500px;
-    border: darkgreen solid 2px;
 }
 #Quienes_somos{
     border: lightcoral solid 2px;
@@ -59,13 +76,14 @@ header {
 #Categorias{
     border: purple solid 2px;
     height: 600px;
+    padding: 2%;
 }
 #CabeceraCat{
     border: darkcyan solid 2px;
     height: 320px;
 }
 .cat{
-    width: 22%;
+    width: 24%;
     margin: auto;
     border: brown solid 2px;
 }
@@ -92,7 +110,7 @@ a{  /*a:link, a:visited, a:active*/
     font-weight: bold;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family:Reclame Script,Helvetica,Verdana;
+    font-family: Reklame;
     font-style:italic;
     font-weight:bold;
   }
@@ -106,8 +124,8 @@ img, picture, video, iframe, figure{
 
 
 /********* BODY *********/
-body {
-    font-family:Sarabun,sans-serif;
+body{
+    font-family:Sarabun;
 }
 
 
