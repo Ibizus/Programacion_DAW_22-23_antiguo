@@ -9,8 +9,6 @@
 </head>
 <body>
     <header>
-        <img id="logo" src=""/>
-
         <nav>
             <ul>
                 <li><a href="">Inicio</a></li>
@@ -21,7 +19,11 @@
         </nav>
 
         <article> <!--Barra de busqueda-->
-            <img id="barra" src="images/search_bar2.eps"/>
+            <img id="barra" src="images/search_box_redonda.png"/>
+        </article>
+
+        <article id="LOGO">
+            <h1>NomadApp</h1>
         </article>
     </header>
     
@@ -33,7 +35,7 @@
 
     <section id="Quienes_somos">
         <h2>¿Quienes somos?</h2>
-        <p>En NomadApp queremos que encuentres la furgo o caravana que buscas tal y como te gustaría que fuera</p>
+        <p>En NomadApp queremos que encuentres la furgo o caravana que buscas tal y como te gustaria que fuera</p>
         <p>¡sin complicaciones!</p>
         <!--boton MAS-->
     </section>
@@ -41,20 +43,23 @@
 
     <section id="Opiniones">
         <h4>Miles de aventureros han encontrado el vehículo de sus sueños en NomadApp</h4>
-        <article>
-            <img class="comillas" src="image/quotMarks.png"/>
-            <h5>Nombre 1</h5>
-            <p>Opinión1</p>
+
+        <article class="opinion">
+            <img class="comillas" src="images/comillas.png"/>
+            <h5>Alexia García</h5>
+            <p>“Despues de mucho tiempo buscando encontramos justo lo que buscabamos y estamos encandos."</p>
         </article>
-        <article>
-            <img class="comillas" src="image/quotMarks.png"/>
-            <h5>Nombre 2</h5>
-            <p>Opinión2</p>
+
+        <article class="opinion">
+            <img class="comillas" src="images/comillas.png"/>
+            <h5>David Moreno</h5>
+            <p>"Vendi mi furgo para pasar a una mas grande y despues de venderla aquí, ahora se que esta en buenas manos."</p>
         </article>
-        <article>
-            <img class="comillas" src="image/quotMarks.png"/>
-            <h5>Nombre 3</h5>
-            <p>Opinión3</p>
+
+        <article class="opinion">
+            <img class="comillas" src="images/comillas.png"/>
+            <h5>María Fuentes</h5>
+            <p>“Queria pasarme al 4x4 y cambiar de forma de viajar, aqui encontre montones de opciones diferentes”</p>
         </article>
     </section>
 
@@ -64,73 +69,89 @@
             <h2>¿Que buscas?</h2>
             <p>Filtra entre miles de productos</p>
         </article>
-        <article class="cat">
-            <img id="imgCat1" src="images/Vans.png"/>
-            <h4>Categoria 1</h4>
-            <p>Descripción</p>
+
+        <article class="cat" id="cat1">
+            <img id="cat1" src="images/Vans.png"/>
+            <h4>Vans</h4>
+            <p>Furgones comerciales, furgos de serie, camperizadas...</p>
         </article>
-        <article class="cat">
-            <img id="imgCat2" src="images/Caravaning.jpg"/>
-            <h4>Categoria 2</h4>
-            <p>Descripción</p>
+
+        <article class="cat" id="cat2">
+            <img src="images/Caravaning.jpg"/>
+            <h4>Caravaning</h4>
+            <p>Caravanas y autocaravanas, integrales, capuchinas...</p>
         </article>
-        <article class="cat">
-            <img id="imgCat3" src="images/Overland.jpg"/>
-            <h4>Categoria 3</h4>
-            <p>Descripción</p>
+
+        <article class="cat" id="cat3">
+            <img src="images/Overland.jpg"/>
+            <h4>Overland</h4>
+            <p>Todoterrenos y vehículos preparados para cruzar el mundo</p>
         </article>
-        <article class="cat">
-            <img id="imgCat4" src="images/Accesorios.jpg"/>
-            <h4>Categoria 4</h4>
-            <p>Descripción</p>
+
+        <article class="cat" id="cat4">
+            <img src="images/Accesorios.jpg"/>
+            <h4>Accesorios</h4>
+            <p>Todo lo que llevas en tu vehiculo camper</p>
         </article>
     </section>
 
 
     <section id="Destacados">
-        <h2>Anuncios destacados</h2>
-        <article>
-            <img>
-            <p>Modelo 1</p>
-            <p>Precio</p>
-        </article>
-        <article>
-            <img>
-            <p>Modelo 2</p>
-            <p>Precio</p>
-        </article>
-        <article>
-            <img>
-            <p>Modelo 3</p>
-            <p>Precio</p>
-        </article>
-        <article>
-            <img>
-            <p>Modelo 4</p>
-            <p>Precio</p>
-        </article>
+        <section id="cabeceraDest">
+            <h2>Anuncios destacados</h2>
+        </section>
+
+        <section id="gris">
+            <article>
+                <img src="images/Accesorios.jpg"/>
+                <p>Transporter T5 4Motion</p>
+                <p>11.000 €</p>
+            </article>
+
+            <article>
+                <img src="images/Accesorios.jpg"/>
+                <p>Fiat Ducato L2H2</p>
+                <p>15.000 €</p>
+            </article>
+
+            <article>
+                <img src="images/Accesorios.jpg"/>
+                <p>VW T1 Kombi</p>
+                <p>28.000 €</p>
+            </article>
+
+            <article>
+                <img src="images/Accesorios.jpg"/>
+                <p>Ford Transit Nugget</p>
+                <p>21.000 €</p>
+            </article>
+        </section>
     </section>
 
 
     <footer>
         <article>
-            <p>LOGO</p>
-            <p>FIRMA</p>
+            <h2 id="logo">NomadApp</h2>
+            <p>©2022 por NomadApp.</p>
         </article>
+
         <article>
             <ul>
                 <li><a href="">Quienes somos</a></li>
                 <li><a href="">Preguntas frecuentes</a></li>
             </ul>
         </article>
+
         <article>
             <ul>
                 <li><a href="">Condiciones de Uso</a></li>
                 <li><a href="">Reglas de publicación</a></li>  
             </ul>
         </article>
+
         <article>
-            <p>Correo</p>
+            <p>645 876 954</p>
+            <p>hlopdia699@g.educaand.es</p>
             <!--REDES SOCIALES-->
         </article>
     </footer>

@@ -16,16 +16,20 @@
     src: url(fonts/Sarabun/Sarabun.woff2) format('woff2'),
     url(fonts/Sarabun/Sarabun.woff) format('woff');
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /************ LAYOUT  *************/
 /************************ display/position/float **********************/
-nav li{
-    display:inline-block;
+#LOGO{
+    text-align: left;
 }
-nav article{
-    position:relative
+nav li{
+    float: right;
+}
+#barra{
+    clear: both;
+    float:right;
 }
 #Portada{
     background-image: url(images/Portada.jpg);
@@ -33,10 +37,7 @@ nav article{
     background-repeat: no-repeat;
     object-fit: cover;
 }
-#Portada h1{
-    position:
-}
-#Opiniones article{
+.opinion{
     display: inline-block;
 }
 .cat {
@@ -44,6 +45,7 @@ nav article{
 }
 #Destacados article{
     display: inline-block;
+    text-align: left;
 }
 footer article{
     display: inline-block;
@@ -53,48 +55,75 @@ footer article{
 
 /****************** height/width/padding/border/margin *******************/
 
-body {
-    border: red solid 2px;
-}
-nav {
+nav li{
+    padding: 0% 2%;
     border: blue solid 2px;
 }
 header {
-    border: orange solid 2px;
+    padding: 2% 5%;
+    height: 6em;
+}
+#barra{
+    width: 40%;
 }
 #Portada{
     margin: 0% 5% 2%;
-    height: 500px;
+    height: 20em;
+}
+#Portada h1{
+    margin: auto;
+    padding-top: 1em;
 }
 #Quienes_somos{
-    border: lightcoral solid 2px;
+    padding-top: 1%;
+    height: 6em;
 }
-#Opiniones article{
+.opinion{
     width: 33%;
-    border: lightskyblue solid 2px;
+    margin: auto;
+    border: #555555 solid 1px;
 }
 #Categorias{
-    border: purple solid 2px;
-    height: 600px;
-    padding: 2%;
+    height: 24em;
+    padding: 0% 2% 0%;
 }
 #CabeceraCat{
-    border: darkcyan solid 2px;
-    height: 320px;
+    height: 5em;
+    padding: 1%;
+    margin: 2%;
 }
 .cat{
-    width: 24%;
+    width: 22%;
     margin: auto;
-    border: brown solid 2px;
+    margin-inline: 1%;
+    height: 15em;
+}
+.cat h4{
+    margin: 1%;
+}
+.cat p{
+    margin: 2%;
 }
 #Destacados{
-    border: lightsalmon solid 2px;
+    height: 22em;
+    padding: 2%;
+}
+#cabeceraDest{
+    padding: 2%;
+    height: 4em;
+}
+#gris{
+    padding: 3%;
+    height: 16em;
 }
 #Destacados article{
     width: 24%;
-    border: pink solid 2px;
+    height: 13.5em;
+    border: blue solid 2px;
 }
 footer{
+    height: 7.5em;
+    padding: 3%;
     border: green solid 2px;
 }
 footer article{
@@ -106,7 +135,7 @@ footer article{
 /************************* Propiedades Generales *********************/
 a{  /*a:link, a:visited, a:active*/
     text-decoration: none;
-    color: black;
+    color: #555555;
     font-weight: bold;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -114,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
     font-style:italic;
     font-weight:bold;
   }
-nav ul{ /* Solo para el NAV, dejamos los demas con el punto*/
+ul{
     list-style-type: none;
 }
 img, picture, video, iframe, figure{
@@ -126,18 +155,25 @@ img, picture, video, iframe, figure{
 /********* BODY *********/
 body{
     font-family:Sarabun;
+    color: #555555;
+    font-size: 1.3em;
+}
+body{
+    text-align: center;
 }
 
+/*** HEADER ***/
+header {
+    background-color: #CFE17D;
+}
+
+.textoXL h1{
+    font-size: 2em;
+}
 
 /********* NAV **********/
 nav{
     text-align: right;
-}  
-
-
-/*** HEADER ***/
-header {
-    background-color: #B0D217;
 }
 
 
@@ -146,14 +182,20 @@ header {
 section #Portada {
     background-image: url(images/Portada.jpg);
 }
+#Portada h1{
+    color: white;
+    font-size: 3.5em;
+}
 #Quienes_somos{
-    background-color: #B0D217;
+    background-color: #CFE17D;
 }
 #cat1{
     background-color: #555555;
+    color: white;
 }
 #cat2{
     background-color: #B0D217;
+    color: white;
 }
 #cat3{
     background-color: #E8C3AC;
@@ -161,8 +203,24 @@ section #Portada {
 #cat4{
     background-color: #E3F0A9;
 }
+
+#Destacados{
+    background-color: #D5D5D5;
+    border: lightsalmon solid 2px;
+}
+#cabeceraDest{
+    border: yellow solid 2px;
+}
+#gris{
+    background-color: white;
+    border: purple solid 2px;
+}
+
 /******** FOOTER *********/
 footer {
-    background-color: #B0D217;
+    background-color: #CFE17D;
+}
+#logo{
+    font-size: 2em;
 }
 
