@@ -1,7 +1,5 @@
 package Funciones;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class PartidoBaloncesto {
     
     //Variables de los equipos
@@ -84,7 +82,7 @@ public class PartidoBaloncesto {
         actualizarPuntos(turno, valor)  
         canasta(turno, tipoTiro) ---> dado un turno y el tipo de tiro devuelve true si hay canasta y false si no     
         canasta(porcentaje) ---> indica si hay canasta según el porcentaje -- Hay canasta si el aleatorio generado es mayor a 50;
-        tipoTiro(turno) --> devuelve el tipo de tiro que va a realizar el equipo que tiene el turno(tiro2 o tiro3)
+            tipoTiro(turno) --> devuelve el tipo de tiro que va a realizar el equipo que tiene el turno(tiro2 o tiro3)
             tipoTiro(int porcentaje2) -> devuelve el tipo de tiro que se produce según el porcentaje indicado  (se genera un numero entre 0 y 100 y según el valor de X_JUEGA_DE_2 elegir que tipo de tiro hace)
             rebote(String equipoAtaque) ---> devuelve E1 si el rebote lo gana E1 y E2 si el rebote lo gana E2
             rebote(int reboteAtaque, int reboteDefensa) ---> indica true si el rebote es de ataque y false si el rebote es de defensa
@@ -103,9 +101,6 @@ public class PartidoBaloncesto {
         static int canasta(String equipoAtaca)
         {
             int resultado = 0;
-
-
-
             
 
             return resultado;
@@ -115,16 +110,32 @@ public class PartidoBaloncesto {
 
 
 
+        /**
+         * Devuelve según de que equipo sea el turno, si este equipo tira de 2 o de 3
+         * Llama a la funcion tipoTiro(porcentajeTiro2) para decidir si cada equipo hace un tipo de tiro u otro
+         * @param turno
+         * @return tipoTiro
+         */
+        static int tipoTiro(String turno)
+        {
+            int tipoTiro;
 
-
-
-        
+            if(turno.equals("E1"))
+            {
+                tipoTiro = tipoTiro(E1_ACIERTO_2);
+            }
+            else 
+            {
+                tipoTiro = tipoTiro(E2_ACIERTO_2);
+            }
+            return tipoTiro;
+        }
 
         /**
          * Devuelve 2 si intenta tirar de 2 y 3 si intenta tirar de 3
          * Se genera un numero aleatorio de 0 a 100 y si es mayor al porcentajeTiro2 entonces el tiro es de 3
          * @param porcentajeTiro2
-         * @return
+         * @return tiro
          */
         static int tipoTiro(int porcentajeTiro2)
         {
