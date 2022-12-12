@@ -29,7 +29,6 @@ nav li{
 }
 #barra{
     clear: both;
-    float:right;
 }
 #Portada{
     background-image: url(images/Portada.jpg);
@@ -49,7 +48,9 @@ nav li{
 }
 footer article{
     display: inline-block;
+    
 }
+
 
 
 
@@ -57,14 +58,17 @@ footer article{
 
 nav li{
     padding: 0% 2%;
-    border: blue solid 2px;
 }
 header {
     padding: 2% 5%;
     height: 6em;
 }
+#login{
+    max-height: 1.8em;
+}
 #barra{
     width: 40%;
+    margin: auto;
 }
 #Portada{
     margin: 0% 5% 2%;
@@ -81,10 +85,9 @@ header {
 .opinion{
     width: 33%;
     margin: auto;
-    border: #555555 solid 1px;
 }
 #Categorias{
-    height: 24em;
+    height: 26em;
     padding: 0% 2% 0%;
 }
 #CabeceraCat{
@@ -96,7 +99,7 @@ header {
     width: 22%;
     margin: auto;
     margin-inline: 1%;
-    height: 15em;
+    height: 17em;
 }
 .cat h4{
     margin: 1%;
@@ -119,17 +122,16 @@ header {
 #Destacados article{
     width: 24%;
     height: 13.5em;
-    border: blue solid 2px;
 }
 footer{
     height: 7.5em;
-    padding: 1% 3% 1%;
-    border: green solid 2px;
+    padding: 1% 3% 2%;
+
 }
 footer article{
     width: 24%;
-    border: purple solid 2px;
 }
+
 
 
 /************************* Propiedades Generales *********************/
@@ -152,6 +154,7 @@ img, picture, video, iframe, figure{
 }
 
 
+
 /********* BODY *********/
 body{
     font-family:Sarabun;
@@ -162,14 +165,18 @@ body{
     text-align: center;
 }
 
+
+
 /*** HEADER ***/
 header {
     background-color: #CFE17D;
 }
 
-.textoXL h1{
-    font-size: 2em;
+#LOGO{
+    font-size: 1.2em;
 }
+
+
 
 /********* NAV **********/
 nav{
@@ -189,6 +196,9 @@ section #Portada {
 #Quienes_somos{
     background-color: #CFE17D;
 }
+.opinion{
+    border: #555555 solid 1px;
+}
 #cat1{
     background-color: #555555;
     color: white;
@@ -206,14 +216,9 @@ section #Portada {
 
 #Destacados{
     background-color: #D5D5D5;
-    border: lightsalmon solid 2px;
-}
-#cabeceraDest{
-    border: yellow solid 2px;
 }
 #gris{
     background-color: white;
-    border: purple solid 2px;
 }
 
 /******** FOOTER *********/
@@ -223,4 +228,5 @@ footer {
 #logo{
     font-size: 2em;
 }
+
 
