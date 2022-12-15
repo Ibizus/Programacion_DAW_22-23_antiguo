@@ -72,7 +72,7 @@ public class PartidoBaloncesto {
         System.out.println(" **** GANA EL EQUIPO: " + (puntosE1>puntosE2 ? "E1": "E2"));
 
     }
-
+        String hola = string.
 
 
         //Funciones que necesito programar
@@ -105,10 +105,6 @@ public class PartidoBaloncesto {
 
             return resultado;
         }
-
-
-
-
 
         /**
          * Devuelve según de que equipo sea el turno, si este equipo tira de 2 o de 3
@@ -239,7 +235,6 @@ public class PartidoBaloncesto {
             return rebotePara;
         }
 
-
         /**
          * Devuelve true si el rebote se lo lleva el equipo atacante y false si se lo lleva el equipo defensor
          * El rebote del equipo atacante es de 0 a maximo y el rebote del equipo que defiende es de 30 al maximo. 
@@ -272,9 +267,11 @@ public class PartidoBaloncesto {
         {
             String resultado = "E1";
             
-
+            if(equipo.equals(resultado))
+            {
+                resultado = "E2";
+            }
             return resultado;
-
         }
 
 }
