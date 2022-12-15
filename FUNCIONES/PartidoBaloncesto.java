@@ -1,4 +1,4 @@
-package Funciones;
+package FUNCIONES;
 
 public class PartidoBaloncesto {
     
@@ -18,10 +18,10 @@ public class PartidoBaloncesto {
     final static int E2_REBOTE_DEF = 70;
     final static int E2_REBOTE_ATA = 40;
 
+    static int puntosE1 = 0;
+    static int puntosE2 = 0;
+
     public static void main(String[] args) {
-        
-        int puntosE1 = 0;
-        int puntosE2 = 0;
 
         System.out.println("Empieza la simulación del partido de baloncesto");
 
@@ -39,14 +39,17 @@ public class PartidoBaloncesto {
             //Si hay canasta entonces el turno es del equipo que estaba defendiendo
             if (valorAtaque>0)
             {
-                if (turno.equals("E1"))
-                {
-                    puntosE1 = actualizarPuntos(puntosE1, valorAtaque);
-                }
-                else 
-                {
-                    puntosE2 = actualizarPuntos(puntosE2, valorAtaque);
-                }
+                // if (turno.equals("E1"))  ESTO LO HAGO DENTOR DE LA FUNCION:
+                // {
+                //     puntosE1 = actualizarPuntos(puntosE1, valorAtaque);
+                // }
+                // else 
+                // {
+                //     puntosE2 = actualizarPuntos(puntosE2, valorAtaque);
+                // }
+
+                actualizarPuntos(turno, valorAtaque);
+
                 System.out.println("Canasta de " + turno + " - de " + valorAtaque + " puntos");
                 imprimirResultado(puntosE1, puntosE2);
                 turno = siguienteTurno(turno);
@@ -70,10 +73,7 @@ public class PartidoBaloncesto {
         System.out.println("FIN de partido");
         imprimirResultado(puntosE1, puntosE2);
         System.out.println(" **** GANA EL EQUIPO: " + (puntosE1>puntosE2 ? "E1": "E2"));
-
     }
-        String hola = string.
-
 
         //Funciones que necesito programar
         /*
@@ -89,7 +89,7 @@ public class PartidoBaloncesto {
                 El rebote del equipo atacante es de 0 a maximo y el rebote del equipo que defiende es de 30 al maximo. El que saque más será el ganador del rebote
             aleatorio(maximo)--> devuelve un numero aleatorio entre 0 y maximo
             aleatorio(minimo, maximo) ---> devuelve un número entre mínimo y máximo
-        imprimirResultado(int valor1, int valor2) ---> imprime el resultado actual del partido.
+            imprimirResultado(int valor1, int valor2) ---> imprime el resultado actual del partido.
         */
     
         
@@ -274,4 +274,30 @@ public class PartidoBaloncesto {
             return resultado;
         }
 
+        /**
+         * Suma el valor de la canasta al marcador del equipo
+         * @param turno
+         * @param valor
+         */
+        static void actualizarPuntos(String turno, int valor)
+        {
+            if(turno.equals("E1"))
+            {
+                puntosE1 = puntosE1 + valor;
+            }
+            else 
+            {
+                puntosE2 = puntosE2 + valor;
+            }
+        }
+
+        /**
+         * Imprime los puntos de cada equipo
+         * @param puntosE1
+         * @param puntosE2
+         */
+        static void imprimirResultado(int puntosE1, int puntosE2)
+        {
+            System.out.println("E1: " + puntosE1 + " - E2: " + puntosE2);
+        }
 }
