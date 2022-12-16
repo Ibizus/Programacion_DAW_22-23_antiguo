@@ -2,7 +2,7 @@ package ARRAY;
 
 import java.util.Scanner;
 
-public class EjercicioArray {
+public class BasicoArray {
 
     static Scanner sc = new Scanner(System.in); // Abrimos el Scanner fuera para poder utilizarlo en todas las funciones
 
@@ -31,7 +31,7 @@ public class EjercicioArray {
                     llenar(nombres);
                     break;
                 case 5:
-                    mostrar(nombres);
+                    imprimirArray(nombres);
                     break;
                 case 0:
                     sc.close();
@@ -42,6 +42,7 @@ public class EjercicioArray {
         }while (!salir);
     }
 
+    // Funcion imprimir menu
     static int menu()
     {
         System.out.println("\t* Opción 1 - Limpiar (null)");
@@ -70,14 +71,21 @@ public class EjercicioArray {
     // Pide posición y cadena para insertar
     static void insertarEn (String[] array)
     {
+        sc.nextLine(); // Limpio Buffer antes de leer String (por si he leído números antes)
         System.out.println("¿Que cadena quieres insertar?");
         String cadenaInsertada = sc.nextLine();
 
         System.out.println("¿En que posición?");
         int posicion = sc.nextInt();
-        sc.nextLine(); // Limpio Buffer despues de leer numeros
 
-        insertar(array, posicion, cadenaInsertada);
+        if(posicion<array.length)
+        {
+            insertar(array, posicion, cadenaInsertada);
+        }
+        else
+        {
+            System.out.println("Posición fuera de rango");
+        }
     }
 
     // Opción 2 - Insertar en posición
@@ -91,9 +99,15 @@ public class EjercicioArray {
     {
         System.out.println("¿Que posición quieres mostrar?");
         int posicion = sc.nextInt();
-        sc.nextLine(); // Limpio Buffer despues de leer numeros
 
-        System.out.println(array[posicion]);
+        if(posicion<array.length)
+        {
+            System.out.println(array[posicion]);
+        }
+        else
+        {
+            System.out.println("Posición fuera de rango");
+        }
     }
 
     // Opción 4 - Llenar todo el Array con cadena creciente
@@ -106,7 +120,7 @@ public class EjercicioArray {
     }
 
     // Opción 5 - Mostrar todo el array
-    static void mostrar(String[] array)
+    static void imprimirArray(String[] array)
     {
         for(int aux=0; aux < array.length; aux++)
         {

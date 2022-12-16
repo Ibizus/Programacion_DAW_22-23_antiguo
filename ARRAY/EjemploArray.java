@@ -21,8 +21,8 @@ public class EjemploArray {
         nombres[posicion] = "Kiwi";
         nombres[posicion+1] = ""; // CADENA VACÍA
 
-        System.out.println("Edaades en posicion 2 " + edades[posicion]);
-        System.out.println("Edaades en posicion 3 " + edades[posicion+1]);
+        System.out.println("Edades en posicion 2 " + edades[posicion]);
+        System.out.println("Edades en posicion 3 " + edades[posicion+1]);
         System.out.println("Nombres en posicion 2 " + nombres[posicion]);
         System.out.println("Nombres en posicion 3 " + nombres[posicion+1]); // imprimirá cadena vacía
         System.out.println("Nombres en posicion 4 " + nombres[posicion+2]); // Imprimirá null
