@@ -32,22 +32,12 @@ public class PartidoBaloncesto {
         //Un partido de baloncesto hay unas 150 posesiones de media.
         for(int posesion = 0; posesion < 150; posesion++)
         {
-
             int valorAtaque = canasta(turno);
             
-
             //Si hay canasta entonces el turno es del equipo que estaba defendiendo
             if (valorAtaque>0)
             {
-                // if (turno.equals("E1"))  ESTO LO HAGO DENTOR DE LA FUNCION:
-                // {
-                //     puntosE1 = actualizarPuntos(puntosE1, valorAtaque);
-                // }
-                // else 
-                // {
-                //     puntosE2 = actualizarPuntos(puntosE2, valorAtaque);
-                // }
-
+                // Saco el INT puntos fuera del main, y hago el IF dentro de la función actualizarPuntos(String turno, int valorAtaque)
                 actualizarPuntos(turno, valorAtaque);
 
                 System.out.println("Canasta de " + turno + " - de " + valorAtaque + " puntos");
@@ -66,7 +56,7 @@ public class PartidoBaloncesto {
             if (posesion== 149 && puntosE1 == puntosE2)
             {
                 System.out.println("EMPATE --- Hay Prorroga");
-                posesion= 100;
+                posesion= 109;
             }
         }
         System.out.println("-------------------------");
@@ -78,10 +68,10 @@ public class PartidoBaloncesto {
         //Funciones que necesito programar
         /*
             salto() --> devuelve E1 si el salto lo gana E1 y E2 si el salto lo gana E2
-        canasta(turno) --> devuelve el valor de la canasta realizada (0, 2 o 3) 
-        actualizarPuntos(turno, valor)  
-        canasta(turno, tipoTiro) ---> dado un turno y el tipo de tiro devuelve true si hay canasta y false si no     
-        canasta(porcentaje) ---> indica si hay canasta según el porcentaje -- Hay canasta si el aleatorio generado es mayor a 50;
+            canasta(turno) --> devuelve el valor de la canasta realizada (0, 2 o 3) 
+            actualizarPuntos(turno, valor)  
+            canasta(turno, tipoTiro) ---> dado un turno y el tipo de tiro devuelve true si hay canasta y false si no     
+            canasta(porcentaje) ---> indica si hay canasta según el porcentaje -- Hay canasta si el aleatorio generado es mayor a 50;
             tipoTiro(turno) --> devuelve el tipo de tiro que va a realizar el equipo que tiene el turno(tiro2 o tiro3)
             tipoTiro(int porcentaje2) -> devuelve el tipo de tiro que se produce según el porcentaje indicado  (se genera un numero entre 0 y 100 y según el valor de X_JUEGA_DE_2 elegir que tipo de tiro hace)
             rebote(String equipoAtaque) ---> devuelve E1 si el rebote lo gana E1 y E2 si el rebote lo gana E2
@@ -92,18 +82,70 @@ public class PartidoBaloncesto {
             imprimirResultado(int valor1, int valor2) ---> imprime el resultado actual del partido.
         */
     
-        
         /**
          * Devuelve 0,2 o 3 dependiendo si el equipo que ataca consigue canasta o no y según el tipo
          * @param equipoAtaca
          * @return
          */
-        static int canasta(String equipoAtaca)
+        static int canasta(String turno)
         {
-            int resultado = 0;
+            int valorAtaque = 0;
+            int tipoTiro = tipoTiro(turno); // 2,3
+	
+            boolean hayCanasta = canasta(turno, tipoTiro); // true-canasta / false-fallo 
             
+            if (hayCanasta)
+            {	
+                valorAtaque = tipoTiro;
+            }
 
-            return resultado;
+            return valorAtaque;
+        }
+
+        /**
+         * Dado un turno y el tipo de tiro devuelve true si hay canasta y false si no
+         * @param turno
+         * @param tipoTiro
+         * @return
+         */
+        static boolean canasta(String turno, int tipoTiro) //boolean
+        {
+            boolean canasta = false;
+
+            if(turno.equals("E1") && tipoTiro==2)
+            {	
+                canasta = canasta(E1_ACIERTO_2);
+            }
+            else if (turno.equals("E1") && tipoTiro==3)
+            {	
+                canasta = canasta(E1_ACIERTO_3);
+            }
+            else if (turno.equals("E2") && tipoTiro==2)
+            {	
+                canasta = canasta(E2_ACIERTO_2);
+            }
+            else if (turno.equals("E2") && tipoTiro==3)
+            {	
+                canasta = canasta(E2_ACIERTO_3);
+            }
+            
+            return canasta;
+        }
+
+        /**
+         * Devuelve true si hay canasta y false en caso contrario
+         * @param porcentajeAcierto
+         * @return
+         */
+        static boolean canasta(int porcentajeAcierto)
+        {
+            boolean canasta = false;
+            int aleatorio = aleatorio(100);
+
+            // Comparo el aleatorio de 100 con el porcentaje de acierto:
+            canasta = (aleatorio < porcentajeAcierto);
+            
+            return canasta;
         }
 
         /**
@@ -146,19 +188,6 @@ public class PartidoBaloncesto {
             
             System.out.println("    Tira de " + tiro);
             return tiro;
-        }
-
-        /**
-         * Devuelve true si hay canasta y false en caso contrario
-         * @param porcentajeAcierto
-         * @return
-         */
-        static boolean canasta(int porcentajeAcierto)
-        {
-            boolean canasta = false;
-
-            
-            return canasta;
         }
 
         /**
@@ -275,7 +304,7 @@ public class PartidoBaloncesto {
         }
 
         /**
-         * Suma el valor de la canasta al marcador del equipo
+         * Suma el valor de la canasta al marcador del equipo según el turno
          * @param turno
          * @param valor
          */
