@@ -1,13 +1,16 @@
 package ARRAY;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import javax.swing.text.Position;
 
 public class BasicoArrayNumerico {
 
     static Scanner sc = new Scanner(System.in); // Abrimos el Scanner fuera para poder utilizarlo en todas las funciones
 
     public static void main(String[] args) {
-        
+
         int[] numeros = new int[10];
 
         boolean salir = false;
@@ -33,6 +36,9 @@ public class BasicoArrayNumerico {
                 case 5:
                     imprimirArray(numeros);
                     break;
+                case 6:
+                    ordenar(numeros);
+                    break;
                 case 0:
                     System.out.println("HASTA PRONTO");
                     sc.close();
@@ -51,6 +57,7 @@ public class BasicoArrayNumerico {
         System.out.println("\t* Opción 3 - Mostrar valor en posición");
         System.out.println("\t* Opción 4 - Llenar todo el Array con número \"n\"");
         System.out.println("\t* Opción 5 - Mostrar todo el array");
+        System.out.println("\t* Opción 6 - Ordenar el array");
         System.out.println("\t* Opción 0 - Salir");
         System.out.println("Indique la opción que quiere realizar:");
 
@@ -94,7 +101,7 @@ public class BasicoArrayNumerico {
     }
 
     // Opción 3 - Mostrar valor en posición
-    static void mostrarPosicion(int[] array) 
+    static void mostrarPosicion(int[] array)
     {
         System.out.println("¿Que posición quieres mostrar?");
         int posicion = sc.nextInt();
@@ -125,5 +132,50 @@ public class BasicoArrayNumerico {
         {
             System.out.println("["+aux+"] -> " +array[aux]);
         }
+
+        System.out.println(Arrays.toString(array)); // Un método para imprimir todo el Array
     }
+
+    // Opción 6 - Ordenar el array
+    static void ordenar(int[] array)
+    {
+        Arrays.sort(array);
+    }
+
+    // Opción 7 - Buscar en el array y mostrar la posición del elemento encontrado
+    static int buscar(int[] array, int elementoBuscado)
+    {
+        int posicion = -1; // Presupongo que no está y devuelvo -1 en ese caso
+
+        // CON UN FOR RECORRO TODO EL ARRAY AUNQUE LO ENCUENTRE
+
+        // for(int aux=0; aux < array.length; aux++)
+        // {
+        //     if (array[aux] == elementoBuscado)
+        //     {
+        //         // Encontrado:
+        //         posicion = aux;
+        //     }
+        // }
+
+        // CON WHILE PARO EN CUANTO ENCUENTRO EL ELEMENTO
+        int indice = 0;
+        while (indice < array.length && posicion == -1)
+        {
+            if (array[indice] == elementoBuscado)
+            {
+                posicion = indice;
+            }
+            indice++;
+        }
+        return posicion;
+    }
+
+    static int buscarOrdenado(int[] array, int elemento)
+    {
+        int posicion = Arrays.binarySearch(array, elemento);
+
+        return posicion;
+    }
+
 }
