@@ -39,6 +39,9 @@ public class BasicoArrayNumerico {
                 case 6:
                     ordenar(numeros);
                     break;
+                case 9:
+                    desordenar(numeros);
+                    break;
                 case 0:
                     System.out.println("HASTA PRONTO");
                     sc.close();
@@ -58,6 +61,7 @@ public class BasicoArrayNumerico {
         System.out.println("\t* Opción 4 - Llenar todo el Array con número \"n\"");
         System.out.println("\t* Opción 5 - Mostrar todo el array");
         System.out.println("\t* Opción 6 - Ordenar el array");
+        System.out.println("\t* Opción 9 - Desordenar el array");
         System.out.println("\t* Opción 0 - Salir");
         System.out.println("Indique la opción que quiere realizar:");
 
@@ -171,11 +175,26 @@ public class BasicoArrayNumerico {
         return posicion;
     }
 
+    // Opción 8 - Buscar ordenado (reduciendo el campo de busqueda)
     static int buscarOrdenado(int[] array, int elemento)
     {
         int posicion = Arrays.binarySearch(array, elemento);
 
         return posicion;
+    }
+
+    // Opción 9 - Desordenar el array de forma aleatoria
+    static int[] desordenar(int[] array)
+    {
+        for(int aux=0; aux < array.length; aux++)
+        {
+            int posicionAleatoria = (int)(Math.random()*array.length);
+
+            int contenedor = array[aux];
+            array[aux] = array[posicionAleatoria];
+            array[posicionAleatoria] = contenedor;
+        }
+        return array;
     }
 
 }
