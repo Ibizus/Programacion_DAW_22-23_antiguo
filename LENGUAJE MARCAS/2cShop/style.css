@@ -1,0 +1,60 @@
+/*** Reseteo de Propiedades ***/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*** Esto es para que si hay padding y border se incluya dentro del calculo (no se salga si pongo el % ajustado sin tener que tener en cuenta bordes)***/
+}
+
+
+/************ LAYOUT  *************/
+/************************ display/position/float **********************/
+
+
+
+
+
+
+
+/****************** height/width/padding/border/margin *******************/
+
+
+
+
+
+
+
+/************************* Propiedades Generales *********************/
+a{  /*a:link, a:visited, a:active*/
+    text-decoration: none;
+    color: #1f4677;
+    font-weight: bold;
+}
+
+
+/********* BODY *********/
+
+
+
+/********* NAV **********/
+
+
+
+/*** HEADER ***/
+
+
+
+/******** CAJA CENTRAL *********/  /*Engloba ASIDE Y SECTION principal*/
+
+
+
+/*** ASIDE ***/
+
+
+
+/*** SECTION ***/
+
+
+
+/******** FOOTER *********/
+
+
