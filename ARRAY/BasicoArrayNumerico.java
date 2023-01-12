@@ -3,8 +3,6 @@ package ARRAY;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import javax.swing.text.Position;
-
 public class BasicoArrayNumerico {
 
     static Scanner sc = new Scanner(System.in); // Abrimos el Scanner fuera para poder utilizarlo en todas las funciones
