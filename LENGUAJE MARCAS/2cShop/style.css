@@ -8,17 +8,52 @@
 
 /************ LAYOUT  *************/
 /************************ display/position/float **********************/
+nav li{
+    display: inline-block;
+}
 
+#principal{
+    float: right;
+}
 
-
-
-
+aside, #principal {  /*Propiedades comunes a ASIDE y SECTION Principal*/
+    display: inline-block;
+}
 
 
 /****************** height/width/padding/border/margin *******************/
+body{
+    margin: 2em 15%;
+}
 
+nav{
+    margin: 1% 0;
+}
+nav li{
+    padding: 1.6%;
+}
 
+header{
+    margin: 1% 0;
+    padding: 3%;
+}
+header h4{
+    margin-bottom: 2%;
+}
 
+aside{
+    width: 24%;
+    margin: 1% 0;
+}
+.categorias{
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+#principal{
+    width: 75%;
+    margin: 1% 0;
+}
 
 
 
@@ -29,32 +64,74 @@ a{  /*a:link, a:visited, a:active*/
     color: #1f4677;
     font-weight: bold;
 }
-
+h1{
+    color: white;
+}
+.encabezado{
+    background-color: #ade4ea;
+}
 
 /********* BODY *********/
-
+body{
+    border: #1f4677 solid 2px;
+    background-color: #ff7b2d;
+    font-family: Calibri, Tahoma, Verdana, Helvetica, sans-serif;
+}
 
 
 /********* NAV **********/
-
+nav{
+    border: grey solid 2px;
+    border-radius: 0.5em;
+    background-color: #2e2e2e;    
+}
+nav li a{
+    text-decoration: none;
+    color: #ade4ea;
+    font-weight: bold;
+}
 
 
 /*** HEADER ***/
-
+header{
+    border: orange solid 2px;
+    border-radius: 0.5em;
+    background: linear-gradient(to bottom, #b7deed, #2bb8e5, #b7deed); 
+}
+header h4{
+    font-weight: 100;
+}
+header p{
+    color: #555752;
+}
 
 
 /******** CAJA CENTRAL *********/  /*Engloba ASIDE Y SECTION principal*/
-
+article{
+    border: pink solid 2px;
+    border-radius: 0.5em;
+    background-color: white;
+}
 
 
 /*** ASIDE ***/
-
+aside{
+    border: green solid 2px;
+    border-radius: 0.5em;
+}
 
 
 /*** SECTION ***/
-
+section{
+    border: red solid 2px;
+    border-radius: 0.5em;
+    background-color: white;
+}
 
 
 /******** FOOTER *********/
-
+footer{
+    border-radius: 0.5em;
+    background-color: #2e2e2e;
+}
 
