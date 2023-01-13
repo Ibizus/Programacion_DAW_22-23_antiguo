@@ -40,6 +40,12 @@ public class UtilesPrueba {
         numerosPrueba = UtilesArrayHector.eliminar(numerosPrueba, 10);
         System.out.println("eliminar elemento: \t\t" + Arrays.toString(numerosPrueba));
 
+        UtilesArrayHector.ordenar(numerosPrueba);
+        System.out.println("ordenar el array: \t\t" + Arrays.toString(numerosPrueba));
+        
+        UtilesArrayHector.desordenar(numerosPrueba);
+        System.out.println("desordenar array: \t\t" + Arrays.toString(numerosPrueba));
+
 
 
     }

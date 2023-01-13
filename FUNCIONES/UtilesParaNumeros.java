@@ -31,10 +31,11 @@ public class UtilesParaNumeros {
             resto = numOperativo % 10;
             volteado = (volteado*10)+resto;
             numOperativo = numOperativo/10;
-        }class volteado;
+        }
+        return volteado;
     }
 
-    static boolean esPrimo(int numero)
+    public static boolean esPrimo(int numero)
     {
         boolean resultado = true;
         int contador = 0;
@@ -51,7 +52,7 @@ public class UtilesParaNumeros {
         return resultado;
     } 
 
-    static int siguientePrimo(int numero)
+    public static int siguientePrimo(int numero)
     {
         int resultado = numero+1;
         while (esPrimo(resultado)==false)
