@@ -6,7 +6,7 @@ public class UtilesArrayHector {
 
 
     /**
-     * Borra los valores del Array dejando uno vacío
+     * Devuelve un array vacío
      * @param array
      * @return nuevo
      */
@@ -18,7 +18,7 @@ public class UtilesArrayHector {
     }
 
     /**
-     * Llena el array con un número de ceros indicados
+     * Devuelve un array de ceros con el tamaño que le pasemos a la función
      * @param array,numeroElementos
      * @return nuevo
      */
@@ -120,6 +120,7 @@ public class UtilesArrayHector {
     {
         int posicion = 0;
 
+
         while(elemento > array[posicion] && posicion < array.length)
         {
             posicion++;
@@ -175,11 +176,11 @@ public class UtilesArrayHector {
 
         for (int i = 0; i < array.length; i++)
         {
-            if(posicion > i)
+            if(posicion > i) // Copio la primera parte hasta la posción eliminada
             {
                 nuevo[i] = array[i];
             }
-            else if(posicion < i)
+            else if(posicion < i) // Copio la segunda parte a partir de la posión eliminada
             {
                 nuevo[i-1] = array[i];
             }
@@ -199,7 +200,7 @@ public class UtilesArrayHector {
         int index = 0;
         while (index < nuevo.length)
         {
-            // recorro el array y cada vez que encuentro una coincidencia llamo a la funcion que elimina esa posicion
+            // Recorro el array y cada vez que encuentro una coincidencia llamo a la funcion que elimina esa posicion
             if(nuevo[index] == elemento)
             {
                 nuevo = eliminarPosicion(nuevo, index);
@@ -232,8 +233,10 @@ public class UtilesArrayHector {
     {
         for(int aux=0; aux < array.length; aux++)
         {
+            // Genero una posión aleatoria de cero a mi última posición
             int posicionAleatoria = (int)(Math.random()*array.length);
 
+            // Guardo el valor de la posicion AUX y la intercambio por la aleatoria generada cada vez
             int contenedor = array[aux];
             array[aux] = array[posicionAleatoria];
             array[posicionAleatoria] = contenedor;
@@ -251,6 +254,7 @@ public class UtilesArrayHector {
 
         for (int i = 0; i < nuevo.length; i++)
         {
+            // Copia el array anterior empezando por el final
             nuevo[i] = array[(array.length-1)-i];    
         }
 
@@ -273,11 +277,12 @@ public class UtilesArrayHector {
      */
     static boolean estaOrdenado(int[] array)
     {
-        boolean ordenado = true;
+        boolean ordenado = true; // caso base
 
         for (int i = 0; i < array.length-1; i++)
         {
-            if(array[i] > array[i+1])
+            // Solo cambio el caso base si una posición no es inferior a la siguiente posición
+            if(array[i] > array[i+1]) 
             {
                 ordenado = false;
             }
@@ -296,8 +301,10 @@ public class UtilesArrayHector {
         int posicion = -1;
         int index = 0;
 
+        // Mientras no llegue al final de array y el valor de posicón no haya cambiado
         while(index < array.length && posicion == -1)
         {
+            // Guardo la posición en el caso de encontrar un elemnto igual a elemento
             if(array[index] == elemento)
             {
                 posicion = index;
