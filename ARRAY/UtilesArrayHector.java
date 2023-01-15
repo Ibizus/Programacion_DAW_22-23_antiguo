@@ -316,8 +316,10 @@ public class UtilesArrayHector {
      */
     static int[] partirPor(int[] array, int posicionInicio, int posicionCorte)
     {
+        // Nuevo array con el tamaño que vamos a cortar
         int[] nuevo = new int[posicionCorte-posicionInicio];
 
+        // Se llena con las posiciones a partir de la de inicio del array de origen
         for (int i = 0; i < nuevo.length; i++)
         {
             nuevo[i] = array[i+posicionInicio];
@@ -333,9 +335,24 @@ public class UtilesArrayHector {
      */
     static boolean sonIguales(int[] array1, int[] array2)
     {
-        boolean iguales = true;
+        boolean iguales = false;
 
+        if (array1.length == array2.length) // Comprobamos que los dos arrays tengan la misma longitud
+        {
+            int index = 0;
 
+            // Mientras no haya un elemento diferente y no sobrepase la longitud del array aumentamos el contador
+            while((elementosIguales(array1, array2, index) == true) && index < array1.length)
+            {
+                index++;
+            }
+
+            // Si el contador ha llegado a la ultima posición es que son iguales
+            if(index ==  array1.length-1)
+            {
+                iguales = true;
+            }
+        }
 
         return iguales;
     }
@@ -348,9 +365,12 @@ public class UtilesArrayHector {
      */
     static boolean elementosIguales(int[] array1, int[] array2, int posicioAComparar)
     {
-        boolean iguales = true;
+        boolean iguales = false;
 
-
+        if(array1[posicioAComparar] == array2[posicioAComparar])
+        {
+            iguales = true;
+        }
 
         return iguales;
     }
