@@ -19,7 +19,7 @@ public class UtilesPrueba {
         numerosPrueba = UtilesArrayHector.insertarAlFinal(numerosPrueba, 5);
         System.out.println("insertar al final: \t\t" + Arrays.toString(numerosPrueba));
 
-        numerosPrueba = UtilesArrayHector.insertarAlPrincipio(numerosPrueba, 1);
+        numerosPrueba = UtilesArrayHector.insertarAlPrincipio(numerosPrueba, 5);
         System.out.println("insertar al principio: \t\t" + Arrays.toString(numerosPrueba));
 
         numerosPrueba = UtilesArrayHector.insertarEnPosicion(numerosPrueba, 88, 4);
@@ -34,10 +34,10 @@ public class UtilesPrueba {
         numerosPrueba = UtilesArrayHector.eliminarPrimero(numerosPrueba);
         System.out.println("eliminar primero: \t\t" + Arrays.toString(numerosPrueba));
 
-        numerosPrueba = UtilesArrayHector.eliminarPosicion(numerosPrueba, 4);
+        numerosPrueba = UtilesArrayHector.eliminarPosicion(numerosPrueba, 5);
         System.out.println("eliminar posición: \t\t" + Arrays.toString(numerosPrueba));
         
-        numerosPrueba = UtilesArrayHector.eliminar(numerosPrueba, 10);
+        numerosPrueba = UtilesArrayHector.eliminar(numerosPrueba, 12);
         System.out.println("eliminar elemento: \t\t" + Arrays.toString(numerosPrueba));
 
         UtilesArrayHector.ordenar(numerosPrueba);
@@ -46,7 +46,8 @@ public class UtilesPrueba {
         UtilesArrayHector.desordenar(numerosPrueba);
         System.out.println("desordenar array: \t\t" + Arrays.toString(numerosPrueba));
 
-
+        numerosPrueba = UtilesArrayHector.invertir(numerosPrueba);
+        System.out.println("invertir array: \t\t" + Arrays.toString(numerosPrueba));
 
     }
 }

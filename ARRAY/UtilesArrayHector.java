@@ -10,7 +10,7 @@ public class UtilesArrayHector {
      * @param array
      * @return nuevo
      */
-    static int[] limpiar(int[] array)
+    static int[] limpiar()
     {
         int[] nuevo = new int[0];
 
@@ -96,7 +96,7 @@ public class UtilesArrayHector {
     {
         int[] nuevo = new int[array.length+1];
 
-        for (int i = 0; i < posicion-1; i++)
+        for (int i = 0; i <= posicion-1; i++)
         {
             nuevo[i] = array[i];
         }
@@ -187,26 +187,7 @@ public class UtilesArrayHector {
         return nuevo;
     }
 
-    // /**
-    //  * Elimina un elemento concreto buscándolo en el array
-    //  * @param array
-    //  * @return nuevo
-    //  */
-    // static int[] eliminar(int[] array, int elemento)
-    // {
-    //     int[] nuevo = Arrays.copyOfRange(array, 0, array.length);
-
-    //     for(int aux=0; aux < nuevo.length; aux++) // recorro el array y cada vez que encuentro una coincidencia llamo a la funcion que elimina esa posicion
-    //     {
-    //         if(nuevo[aux] == elemento)
-    //         {
-    //             nuevo = eliminarPosicion(nuevo, aux);
-    //         }
-    //     }
-    //     return nuevo;
-    // }
-
-        /**
+    /**
      * Elimina un elemento concreto buscándolo en el array
      * @param array
      * @return nuevo
@@ -215,24 +196,32 @@ public class UtilesArrayHector {
     {
         int[] nuevo = Arrays.copyOfRange(array, 0, array.length);
 
-        for(int aux=0; aux < nuevo.length; aux++) // recorro el array y cada vez que encuentro una coincidencia llamo a la funcion que elimina esa posicion
+        int index = 0;
+        while (index < nuevo.length)
         {
-            if(nuevo[aux] == elemento)
+            // recorro el array y cada vez que encuentro una coincidencia llamo a la funcion que elimina esa posicion
+            if(nuevo[index] == elemento)
             {
-                nuevo = eliminarPosicion(nuevo, aux);
+                nuevo = eliminarPosicion(nuevo, index);
+            }
+            else
+            {
+                index++; // Solo aumento el contador cuando no encuentro el elemento, para no saltar posiciones cuando elimino
             }
         }
         return nuevo;
     }
 
-
     /**
      * Ordena el array de menor a mayor
      * @param array
+     * @return array
      */
-    static void ordenar(int[] array)
+    static int[] ordenar(int[] array)
     {
         Arrays.sort(array);
+
+        return array;
     }
 
     /**
@@ -251,6 +240,120 @@ public class UtilesArrayHector {
         }
     }
 
+    /**
+     * Invierte el orden del array
+     * @param array
+     * @return nuevo
+     */
+    static int[] invertir(int[] array)
+    {
+        int[] nuevo = new int[array.length];
+
+        for (int i = 0; i < nuevo.length; i++)
+        {
+            nuevo[i] = array[(array.length-1)-i];    
+        }
+
+        return nuevo;
+    }
+
+    /**
+     * Imprime el array tabulado
+     * @param array
+     */
+    static void imprimir(int[] array)
+    {
+        System.out.println("\t" + Arrays.toString(array));
+    }
+
+    /**
+     * Devuelve true o false dependiendo de si el array está ordenado
+     * @param array
+     * @return ordenado
+     */
+    static boolean estaOrdenado(int[] array)
+    {
+        boolean ordenado = true;
+
+        for (int i = 0; i < array.length-1; i++)
+        {
+            if(array[i] > array[i+1])
+            {
+                ordenado = false;
+            }
+        }
+        return ordenado;
+    }
+
+    /**
+     * Busca un valor dentro del array y devuelve su posición
+     * ó -1 en caso de no aparecer ese elemento
+     * @param array,elemento
+     * @return posicion
+     */
+    static int buscar(int[] array, int elemento)
+    {
+        int posicion = -1;
+        int index = 0;
+
+        while(index < array.length && posicion == -1)
+        {
+            if(array[index] == elemento)
+            {
+                posicion = index;
+            }
+            index++;
+        }
+
+        return posicion;
+    }
+
+    /**
+     * Devuelve el array desde la posicion inicial indicada 
+     * hasta la de corte sin incluir esta última en el array resultante
+     * @param array,posicionInicio,posicionCorte
+     * @return nuevo
+     */
+    static int[] partirPor(int[] array, int posicionInicio, int posicionCorte)
+    {
+        int[] nuevo = new int[posicionCorte-posicionInicio];
+
+        for (int i = 0; i < nuevo.length; i++)
+        {
+            nuevo[i] = array[i+posicionInicio];
+        }
+
+        return nuevo;
+    }
+
+    /**
+     * Devuelve true si los dos arrays son iguales
+     * @param array1,array2
+     * @return iguales
+     */
+    static boolean sonIguales(int[] array1, int[] array2)
+    {
+        boolean iguales = true;
+
+
+
+        return iguales;
+    }
+
+    /**
+     * devuelve true si el elemento
+     * en ambos arrays son iguales
+     * @param array1,array2,posicionAComparar
+     * @return iguales
+     */
+    static boolean elementosIguales(int[] array1, int[] array2, int posicioAComparar)
+    {
+        boolean iguales = true;
+
+
+
+        return iguales;
+    }
 
 
 }
