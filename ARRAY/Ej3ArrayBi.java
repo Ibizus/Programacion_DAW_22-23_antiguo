@@ -7,8 +7,7 @@ public class Ej3ArrayBi {
 
         rellenarArrayBi(tabla);
 
-
-
+        imprimirTabla(tabla);
 
     }
 
@@ -27,5 +26,39 @@ public class Ej3ArrayBi {
         }
     }
 
+    static void imprimirTabla(int[][] arrayBid)
+    {
+        int total = 0;
+            // arrayBid.length es igual al numero de filas
+        // recorro cada una de las filas
+        for (int i = 0; i < arrayBid.length; i++)
+        {
+            int sumaFila = 0 ;
+
+            System.out.print("|   ");
+            // por cada fila recorro sus columnas
+            for (int j = 0; j < arrayBid[i].length; j++)
+            {
+                System.out.print(arrayBid[i][j] + "   |   ");
+
+                sumaFila = sumaFila + arrayBid[i][j];
+            }
+            System.out.println("\tΣ fila " + i + ":  " + sumaFila);
+
+            total = total + sumaFila;
+        }
+
+        // Bucle que imprime el sumatorio de las columnas:
+        for (int j = 0; j < arrayBid[0].length; j++)
+        {
+            int sumaColumna = 0;
+            for (int i = 0; i < arrayBid.length; i++)
+            {
+                sumaColumna = sumaColumna + arrayBid[i][j];
+            }
+            System.out.print("Σ " + j + ": " + sumaColumna + " ");
+        }
+        System.out.println("\t\t total: " + total);
+    }
 
 }
