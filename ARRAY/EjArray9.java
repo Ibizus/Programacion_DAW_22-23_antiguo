@@ -2,7 +2,7 @@ package ARRAY;
 
 import java.util.Scanner;
 
-public class EjArray9 {
+public class EjArray9 { // Par o Impar
     public static void main(String[] args) {
         
         int[] numeros = new int[8];
@@ -10,15 +10,14 @@ public class EjArray9 {
         pideNumeros(numeros);
 
         parOImpar(numeros);
-
-        imprimeResultado()
     }
-
-
 
     // FUNCIONES:
 
-    // Pide los 8 números y los mete en un array
+    /**
+     * Pide los 8 números y los mete en un array
+     * @param array
+     */
     static void pideNumeros(int[] array)
     {
         Scanner sc = new Scanner(System.in);
@@ -26,7 +25,7 @@ public class EjArray9 {
 
         for(int aux=0; aux < array.length; aux++)
         {
-            System.out.println("Introduce un número:");
+            System.out.println("\nIntroduce un número:");
             numero = sc.nextInt();
 
             array[aux] = numero;
@@ -34,14 +33,32 @@ public class EjArray9 {
         sc.close();  
     }
 
-    // comprueba si es par o impar
-    static String parOImpar(int numero)
+    /**
+     * Imprime los valores del array con par o impar
+     * @param array
+     */
+    static void parOImpar(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            boolean esPar = parOImpar(array[i]);
+
+            String mensaje = (esPar) ? "Par" : "Impar";
+
+            System.out.println(array[i] + ": " + mensaje);
+        }
+    }
+
+    /**
+     * Comprueba si un numero es par o impar
+     * @param array
+     * @return esPar
+     */
+    static boolean parOImpar(int numero)
     {
         boolean esPar = (numero % 2) == 0;
 
-        String mensaje = (esPar) ? "Par" : "Impar";
-
-        return mensaje;
+        return esPar;
     }
 
 
