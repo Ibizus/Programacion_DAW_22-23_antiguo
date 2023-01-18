@@ -35,11 +35,11 @@ public class Ej3ArrayBi {
         {
             int sumaFila = 0 ;
 
-            System.out.print("|   ");
+            System.out.print("|\t");
             // por cada fila recorro sus columnas
             for (int j = 0; j < arrayBid[i].length; j++)
             {
-                System.out.print(arrayBid[i][j] + "   |   ");
+                System.out.print(arrayBid[i][j] + "\t|\t");
 
                 sumaFila = sumaFila + arrayBid[i][j];
             }
@@ -56,7 +56,7 @@ public class Ej3ArrayBi {
             {
                 sumaColumna = sumaColumna + arrayBid[i][j];
             }
-            System.out.print("Σ " + j + ": " + sumaColumna + " ");
+            System.out.print("  Σ " + j + ": " + sumaColumna + "\t");
         }
         System.out.println("\t\t total: " + total);
     }
