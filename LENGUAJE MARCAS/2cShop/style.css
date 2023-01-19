@@ -12,14 +12,21 @@ nav li{
     display: inline-block;
 }
 
-#principal{
+main{
     float: right;
 }
 
-aside, #principal {  /*Propiedades comunes a ASIDE y SECTION Principal*/
+aside, main {  /*Propiedades comunes a ASIDE y SECTION Principal*/
     display: inline-block;
 }
 
+.art{
+    display: inline-block;
+}
+
+footer{
+    clear: both;
+}
 
 /****************** height/width/padding/border/margin *******************/
 body{
@@ -37,7 +44,7 @@ header{
     margin: 1% 0;
     padding: 3%;
 }
-header h4{
+header h3{
     margin-bottom: 2%;
 }
 
@@ -45,14 +52,18 @@ aside{
     width: 24%;
     margin: 1% 0;
 }
-.categorias{
+aside section{
     padding: 2%;
     margin-bottom: 2%;
 }
 
-#principal{
+main{
     width: 75%;
     margin: 1% 0;
+}
+.art{
+    width: 30%;
+    margin: 2%;
 }
 
 
@@ -67,8 +78,11 @@ a{  /*a:link, a:visited, a:active*/
 h1{
     color: white;
 }
-.encabezado{
+h4, h5{
     background-color: #ade4ea;
+}
+nav, header, aside, section, article, footer, h5, h4{
+    border-radius: 0.5em;
 }
 
 /********* BODY *********/
@@ -82,7 +96,6 @@ body{
 /********* NAV **********/
 nav{
     border: grey solid 2px;
-    border-radius: 0.5em;
     background-color: #2e2e2e;    
 }
 nav li a{
@@ -95,10 +108,9 @@ nav li a{
 /*** HEADER ***/
 header{
     border: orange solid 2px;
-    border-radius: 0.5em;
     background: linear-gradient(to bottom, #b7deed, #2bb8e5, #b7deed); 
 }
-header h4{
+header h3{
     font-weight: 100;
 }
 header p{
@@ -107,9 +119,12 @@ header p{
 
 
 /******** CAJA CENTRAL *********/  /*Engloba ASIDE Y SECTION principal*/
+.art{
+    border: #00a0bc solid 1em;
+}
+
 article{
     border: pink solid 2px;
-    border-radius: 0.5em;
     background-color: white;
 }
 
@@ -117,21 +132,21 @@ article{
 /*** ASIDE ***/
 aside{
     border: green solid 2px;
-    border-radius: 0.5em;
+}
+aside section ul{
+    text-decoration: underline #00a0bc;
 }
 
 
 /*** SECTION ***/
 section{
     border: red solid 2px;
-    border-radius: 0.5em;
     background-color: white;
 }
 
 
 /******** FOOTER *********/
 footer{
-    border-radius: 0.5em;
     background-color: #2e2e2e;
 }
 
