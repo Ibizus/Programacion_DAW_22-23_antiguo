@@ -94,21 +94,31 @@ public class UtilesArrayHector {
      */
     static int[] insertarEnPosicion(int[] array, int elemento, int posicion)
     {
-        int[] nuevo = new int[array.length+1];
+        int[] nuevo = array; // Parto del array original por si tengo que devolver el mismo
 
-        for (int i = 0; i <= posicion-1; i++)
+        if(posicion < array.length) // Caso de posicion correcta
         {
-            nuevo[i] = array[i];
-        }
+            nuevo = new int[array.length+1];
 
-        nuevo[posicion] = elemento;
+            for (int i = 0; i <= posicion-1; i++)
+            {
+                nuevo[i] = array[i];
+            }
+    
+            nuevo[posicion] = elemento; // Copio el elemento en la posicion indicada
+    
+            if(posicion<nuevo.length-1) // Solo hago este paso en caso de que no halla insertado en la ultima posicion
+            {
+                for (int i = posicion+1; i < nuevo.length; i++)
+                {
+                    nuevo[i] = array[i-1];
+                }
+            }
 
-        for (int i = posicion+1; i < nuevo.length; i++)
-        {
-            nuevo[i] = array[i-1];
         }
 
         return nuevo;
+
     }
 
     /**
@@ -119,7 +129,6 @@ public class UtilesArrayHector {
     static int[] insertarOrdenado(int[] array, int elemento)
     {
         int posicion = 0;
-
 
         while(elemento > array[posicion] && posicion < array.length)
         {
@@ -138,11 +147,16 @@ public class UtilesArrayHector {
      */
     static int[] eliminarUltimo(int[] array)
     {
-        int[] nuevo = new int[array.length-1];
+        int[] nuevo = array;
 
-        for (int i = 0; i < nuevo.length; i++)
+        if(array.length != 0)
         {
-            nuevo[i] = array[i];
+            nuevo = new int[array.length-1];
+
+            for (int i = 0; i < nuevo.length; i++)
+            {
+                nuevo[i] = array[i];
+            }
         }
 
         return nuevo;
@@ -155,11 +169,16 @@ public class UtilesArrayHector {
      */
     static int[] eliminarPrimero(int[] array)
     {
-        int[] nuevo = new int[array.length-1];
+        int[] nuevo = array;
 
-        for (int i = 0; i < nuevo.length; i++)
+        if(array.length != 0)
         {
-            nuevo[i] = array[i+1];
+            nuevo = new int[array.length-1];
+
+            for (int i = 0; i < nuevo.length; i++)
+            {
+                nuevo[i] = array[i+1];
+            }
         }
 
         return nuevo;
@@ -172,17 +191,22 @@ public class UtilesArrayHector {
      */
     static int[] eliminarPosicion(int[] array, int posicion)
     {
-        int[] nuevo = new int[array.length-1];
-
-        for (int i = 0; i < array.length; i++)
+        int[] nuevo = array;
+        
+        if(array.length != 0 && posicion<array.length)
         {
-            if(posicion > i) // Copio la primera parte hasta la posción eliminada
+            nuevo = new int[array.length-1];
+
+            for (int i = 0; i < array.length; i++)
             {
-                nuevo[i] = array[i];
-            }
-            else if(posicion < i) // Copio la segunda parte a partir de la posión eliminada
-            {
-                nuevo[i-1] = array[i];
+                if(posicion > i) // Copio la primera parte hasta la posción eliminada
+                {
+                    nuevo[i] = array[i];
+                }
+                else if(posicion < i) // Copio la segunda parte a partir de la posión eliminada
+                {
+                    nuevo[i-1] = array[i];
+                }
             }
         }
         return nuevo;
@@ -323,16 +347,29 @@ public class UtilesArrayHector {
      */
     static int[] partirPor(int[] array, int posicionInicio, int posicionCorte)
     {
-        // Nuevo array con el tamaño que vamos a cortar
-        int[] nuevo = new int[posicionCorte-posicionInicio];
 
-        // Se llena con las posiciones a partir de la de inicio del array de origen
-        for (int i = 0; i < nuevo.length; i++)
+
+        // Control de posiciones correctas:
+        if(posicionInicio<array.length && posicionCorte<array.length && posicionInicio<posicionCorte)
         {
-            nuevo[i] = array[i+posicionInicio];
+            // Nuevo array con el tamaño que vamos a cortar
+            int[] nuevo = new int[posicionCorte-posicionInicio];
+
+            // Se llena con las posiciones a partir de la de inicio del array de origen
+            for (int i = 0; i < nuevo.length; i++)
+            {
+                nuevo[i] = array[i+posicionInicio];
+            }
+
+            return nuevo;
+        }
+        else
+        {
+            int[] nuevo = array;
+
+            return nuevo;
         }
 
-        return nuevo;
     }
 
     /**
@@ -382,5 +419,25 @@ public class UtilesArrayHector {
         return iguales;
     }
 
+    /**
+     * Devuelve un array que concatena los dos que se le pasan
+     * @param array1,array2
+     * @return nuevo
+     */
+    static int[] concatenarArrays(int[] array1, int[] array2)
+    {
+        int[] nuevo = new int[array1.length + array2.length];
 
+        for (int i = 0; i < array1.length; i++) // Copio el primer array
+        {
+            nuevo[i] = array1[i];
+        }
+
+        for (int i = 0; i < array2.length; i++) // Copio el segundo a partir de la ultima posicion del primer array
+        {
+            nuevo[array1.length +i] = array2[i];
+        }
+
+        return nuevo;
+    }
 }

@@ -41,6 +41,7 @@ public class EjArray10 {
         {
             array[i] = (int)(Math.random()*101);
         }
+        return nuevo;
     }
 
 }

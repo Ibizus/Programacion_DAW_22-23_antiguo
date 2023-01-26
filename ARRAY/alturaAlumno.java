@@ -2,7 +2,7 @@ package ARRAY;
 
 import java.util.Scanner;
 
-public class alturaAlumno {
+public class alturaAlumno { // Recorrer dos arrays con la misma longitud
 
     static Scanner sc = new Scanner(System.in);
     
@@ -20,7 +20,7 @@ public class alturaAlumno {
         // BUCLE MENU
         while (!salir)
         {
-            // FUNCION MENU CON OPCIONES (ME DEVUELVE LA OPCIONQ UE HE PULSADO)
+            // FUNCION MENU CON OPCIONES (ME DEVUELVE LA OPCION QUE HE PULSADO)
             opcion = menu();
 
             switch (opcion)
@@ -32,7 +32,6 @@ public class alturaAlumno {
             
                     alumnos = añadeNombre(alumnos, nuevoNombre);
                     alturas = añadeAltura(alturas);
-
                     break;
 
                 case 2: // Pide un nombre, lo busca y pide la altura para modificarla
@@ -46,14 +45,14 @@ public class alturaAlumno {
                     double altura = sc.nextDouble();
             
                     modificaAltura(alturas, posicion, altura);
-
                     break;
 
-                case 3:
+                case 3: // Muestra la tabla de alumnos con sus alturas a un lado
+
                     mostrar(alumnos, alturas);
                     break;
 
-                case 4:
+                case 4: // Pide un incremento de altura y lo aplica a todas las alturas
                     
                     System.out.println("Introduce el incremento de altura:");
                     double incremento = sc.nextDouble();
@@ -62,15 +61,26 @@ public class alturaAlumno {
                     {
                         alturas[i] = alturas[i] + incremento;
                     }
-
                     break;
 
-                case 5:
+                case 5: // Muestra el nombre del alumno más alto junto a su altura
                 
+                    double[] posicionMaximo = calculaMaximo(alturas);
+
+                    if(alumnos.length == 0)
+                    {
+                        System.out.println("Aun no hay registro de alumnos");
+                    }
+                    else 
+                    {
+                        System.out.println("El alumno más alto es " + alumnos[(int)posicionMaximo[0]] + ", y mide " + posicionMaximo[1] + " metros");
+                    }
                     break;
 
-                case 6:
-                
+                case 6: // Muestra la media de las alturas de los alumnos
+
+                    double media = calculaMedia(alturas);
+                    System.out.println("La media de alturas es: " + media + " metros");
                     break;
                 
                 default:
@@ -94,12 +104,12 @@ public class alturaAlumno {
     {
         int usuario = 0;
 
-        System.out.println("Elige la opción que quieres realizar:");
+        System.out.println("\nElige la opción que quieres realizar:");
         System.out.println("\t1 -> Añadir nuevo alumno"); // pide nombre y pone por defecto 1,5 de altura
         System.out.println("\t2 -> Modificar altura alumno"); // PIDE NOMBRE y luego pide nueva altura
         System.out.println("\t3 -> Mostrar todo"); // Muestra la tabla de nombres con sus alturas
         System.out.println("\t4 -> Incrementar altura"); // Pide el incremento
-        System.out.println("\t5 -> Sacar el alumno más alto");
+        System.out.println("\t5 -> Sacar el alumno más alto"); 
         System.out.println("\t6 -> Sacar la media de altura");
         System.out.println("Pulsa cualquier otro número para salir");
         usuario = sc.nextInt();
@@ -202,22 +212,33 @@ public class alturaAlumno {
 
 
     /**
-     * Calcula el valor maximo de un array
+     * Calcula el valor maximo de un array y su posicion
+     * y devuelve ambos valores en un array
      * @param array
-     * @return maximo
+     * @return resultadoMaximo
      */
-    static double calculaMaximo(double[] array)
+    static double[] calculaMaximo(double[] array)
     {
-        double maximo = array[0];
+        double[] resultadoMaximo = new double[2];
 
-        for (int i = 0; i < array.length; i++)
+        if(array.length>0) // Controlo que el array no esté vacío
         {
-            if(array[i]>maximo)
+            double maximo = array[0];
+            double posicion = 0;
+
+            for (int i = 0; i < array.length; i++)
             {
-                maximo = array[i];
+                if(array[i]>maximo)
+                {
+                    maximo = array[i];
+                    posicion = i;
+                }
             }
+            resultadoMaximo[0] = posicion;
+            resultadoMaximo[1] = maximo;
         }
-        return maximo;
+
+        return resultadoMaximo;
     }
 
     /**
@@ -234,9 +255,9 @@ public class alturaAlumno {
             media = media + array[i];
         }
         
-        if(media/array.length > 0) // controlo la division por cero
+        if(array.length > 0) // controlo la division por cero
         {
-            media = (int)(media/array.length);
+            media = media/(array.length);
         }
 
         return media;
