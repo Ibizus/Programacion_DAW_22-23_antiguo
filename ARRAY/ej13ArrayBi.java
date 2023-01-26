@@ -42,7 +42,10 @@ public class ej13ArrayBi {
             media = media + arrayBi[pais][i];
         }
         
-        media = (int)(media/arrayBi[0].length);
+        if(media/arrayBi[0].length > 0) // controlo la division por cero
+        {
+            media = (int)(media/arrayBi[0].length);
+        }
 
         return media;
     }
@@ -89,7 +92,7 @@ public class ej13ArrayBi {
     }
 
     /**
-     * Calcula el valor medio de una fila
+     * Imprime la tabla de alturas por pais
      * @param arrayBi
      * @return media
      */

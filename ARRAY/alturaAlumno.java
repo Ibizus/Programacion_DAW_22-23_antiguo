@@ -25,20 +25,44 @@ public class alturaAlumno {
 
             switch (opcion)
             {
-                case 1:
-                    añadirAlumno(alumnos, alturas);
+                case 1: // Pide nombre, añade al alumno y por defecto le pone 1.5m de altura
+
+                    System.out.println("Inserta el nombre del nuevo alumno:");
+                    String nuevoNombre = sc.nextLine();
+            
+                    alumnos = añadeNombre(alumnos, nuevoNombre);
+                    alturas = añadeAltura(alturas);
+
                     break;
 
-                case 2:
-                    modificaAlturaAlumno(alumnos, alturas);
+                case 2: // Pide un nombre, lo busca y pide la altura para modificarla
+
+                    System.out.println("Introduce el nombre del alumno a modificar:");
+                    String nombreBuscado = sc.nextLine();
+            
+                    int posicion = buscaNombre(alumnos, nombreBuscado);
+            
+                    System.out.println("Introduce la nueva altura:");
+                    double altura = sc.nextDouble();
+            
+                    modificaAltura(alturas, posicion, altura);
+
                     break;
 
                 case 3:
-                    pintarTabla(alumnos, alturas);
+                    mostrar(alumnos, alturas);
                     break;
 
                 case 4:
                     
+                    System.out.println("Introduce el incremento de altura:");
+                    double incremento = sc.nextDouble();
+
+                    for (int i = 0; i < alturas.length; i++)
+                    {
+                        alturas[i] = alturas[i] + incremento;
+                    }
+
                     break;
 
                 case 5:
@@ -83,21 +107,6 @@ public class alturaAlumno {
         sc.nextLine();
 
         return usuario;
-    }
-
-    /**
-     * Pide nombre, añade al alumno y por defecto le pone 1.5m de altura
-     * @param array1,array2
-     * @return nuevo
-     */
-    static void añadirAlumno(String[] array1, double[] array2)
-    {
-        System.out.println("Inserta el nombre del nuevo alumno:");
-        String nuevoNombre = sc.nextLine();
-
-        array1 = añadeNombre(array1, nuevoNombre);
-
-        array2 = añadeAltura(array2);
     }
 
     /**
@@ -146,7 +155,11 @@ public class alturaAlumno {
      */
     static void modificaAltura(double[] array, int posicion, double altura)
     {
-        array[posicion] = altura;
+        if(posicion>=0 && posicion<array.length) // Controlo que la posicion no esté fuera del rango
+        {
+            array[posicion] = altura;
+        }
+
     }
 
     /**
@@ -161,7 +174,7 @@ public class alturaAlumno {
         int index = 0;
 
         // Mientras no llegue al final de array y el valor de posicón no haya cambiado
-        while(index < array.length && posicionEncontrada == -1)
+        while(index <= array.length-1 && posicionEncontrada == -1)
         {
             // Guardo la posición en el caso de encontrar un nombre igual
             if(array[index].equals(nombre))
@@ -174,21 +187,58 @@ public class alturaAlumno {
         return posicionEncontrada;
     }
 
+
     /**
-     * Pide un nombre, lo busca y pide la altura para modificarla
+     * Pinta la tabla de alturas
      * @param arrayNombre,arrayAltura
      */
-    static void modificaAlturaAlumno(String[] arrayNombre, double[] arrayAltura)
+    static void mostrar(String[] arrayNombre, double[] arrayAltura)
     {
-        System.out.println("Introduce el nombre del alumno a modificar:");
-        String nombreBuscado = sc.nextLine();
-
-        int posicion = buscaNombre(arrayNombre, nombreBuscado);
-
-        System.out.println("Introduce la nueva altura:");
-        double altura = sc.nextDouble();
-
-        modificaAltura(arrayAltura, posicion, altura);
+        for (int i = 0; i < arrayNombre.length; i++)
+        {
+            System.out.println(arrayNombre[i] + "\t|   " + arrayAltura[i]);    
+        }
     }
 
+
+    /**
+     * Calcula el valor maximo de un array
+     * @param array
+     * @return maximo
+     */
+    static double calculaMaximo(double[] array)
+    {
+        double maximo = array[0];
+
+        for (int i = 0; i < array.length; i++)
+        {
+            if(array[i]>maximo)
+            {
+                maximo = array[i];
+            }
+        }
+        return maximo;
+    }
+
+    /**
+     * Calcula el valor medio de un array
+     * @param array
+     * @return media
+     */
+    static double calculaMedia(double[] array)
+    {
+        double media = 0;
+
+        for (int i = 0; i < array.length; i++)
+        {
+            media = media + array[i];
+        }
+        
+        if(media/array.length > 0) // controlo la division por cero
+        {
+            media = (int)(media/array.length);
+        }
+
+        return media;
+    }
 }
