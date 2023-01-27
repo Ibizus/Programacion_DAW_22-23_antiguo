@@ -94,21 +94,31 @@ public class BibliotecaArray {
      */
     static int[] insertarEnPosicion(int[] array, int elemento, int posicion)
     {
-        int[] nuevo = new int[array.length+1];
+        int[] nuevo = array; // Parto del array original por si tengo que devolver el mismo
 
-        for (int i = 0; i <= posicion-1; i++)
+        if(posicion < array.length) // Caso de posicion correcta
         {
-            nuevo[i] = array[i];
-        }
+            nuevo = new int[array.length+1];
 
-        nuevo[posicion] = elemento;
+            for (int i = 0; i <= posicion-1; i++)
+            {
+                nuevo[i] = array[i];
+            }
+    
+            nuevo[posicion] = elemento; // Copio el elemento en la posicion indicada
+    
+            if(posicion<nuevo.length-1) // Solo hago este paso en caso de que no halla insertado en la ultima posicion
+            {
+                for (int i = posicion+1; i < nuevo.length; i++)
+                {
+                    nuevo[i] = array[i-1];
+                }
+            }
 
-        for (int i = posicion+1; i < nuevo.length; i++)
-        {
-            nuevo[i] = array[i-1];
         }
 
         return nuevo;
+
     }
 
     /**
@@ -119,7 +129,6 @@ public class BibliotecaArray {
     static int[] insertarOrdenado(int[] array, int elemento)
     {
         int posicion = 0;
-
 
         while(elemento > array[posicion] && posicion < array.length)
         {
@@ -410,6 +419,27 @@ public class BibliotecaArray {
         return iguales;
     }
 
+    /**
+     * Devuelve un array que concatena los dos que se le pasan
+     * @param array1,array2
+     * @return nuevo
+     */
+    static int[] concatenarArrays(int[] array1, int[] array2)
+    {
+        int[] nuevo = new int[array1.length + array2.length];
+
+        for (int i = 0; i < array1.length; i++) // Copio el primer array
+        {
+            nuevo[i] = array1[i];
+        }
+
+        for (int i = 0; i < array2.length; i++) // Copio el segundo a partir de la ultima posicion del primer array
+        {
+            nuevo[array1.length +i] = array2[i];
+        }
+
+        return nuevo;
+    }
 
 }
 
