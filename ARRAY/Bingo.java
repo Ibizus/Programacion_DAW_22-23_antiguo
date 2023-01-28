@@ -34,13 +34,12 @@ public class Bingo {
             // Vaciado de los numeros generados en el juego anterior:
             numerosGenerados = UtilesArrayHector.limpiar();
 
-            //introduzco los numeros de cada columna
+            //introduzco los numeros de cada columna y los ordeno
             rellenarNumerosCarton(carton);
 
             //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
             ponerBlancos(carton);
 
-// ORDENAR NUMEROS COLUMNA DE MENOS A MAYOR
 
             //pinto el cartón ;
             System.out.println("\n\tTU CARTÓN PARA ESTA PARTIDA:");
@@ -109,7 +108,7 @@ public class Bingo {
                     }
                 }
 
-            } // JUGAR
+            } // WHILE JUGAR
 
             //Pregunto si quiero jugar otro cartón o salir definitivamente del programa
             System.out.println("¿Quieres jugar otro cartón? -> 1 para SI, 0 para salir");
@@ -122,23 +121,29 @@ public class Bingo {
             else 
             {
                 System.out.println("Gracias por jugar con nosotros, ¡¡hasta pronto!!");
+
+                // actualizo condición para que en las siguientes partidas
+                // no me imprima el carton cuando quiero salir
+                salir = true; 
             }
 
         } while(!salir);
     }
 
+    
+    // FUNCIONES:
 
     /**
      * Rellena el cartón completo con los numeros aleatorios
      * de la decena correspondiente en cada columna
      * @param arrayBi
      */
-    static void rellenarNumerosCarton(int[][] arrayBi) // OK
+    static void rellenarNumerosCarton(int[][] arrayBi) 
     {
-        // Selecciono cada una de las columnas
+        // Selecciono cada una de las 8 columnas
         for (int i = 0; i < arrayBi.length; i++)
         {
-            // Recorro las posiciones de cada columna
+            // Recorro las 3 posiciones de cada columna
             for (int j = 0; j < arrayBi[0].length; j++)
             {
                 if(i == 0) // Caso columna 0 (1-9)
@@ -175,6 +180,7 @@ public class Bingo {
                     }while(esta);
                 }
             }
+            arrayBi[i] = ordenar(arrayBi[i]); // Ordena cada columna despues de terminar de rellenarla
         }
     }
 
@@ -184,7 +190,7 @@ public class Bingo {
      * Marca los espacios en blanco con el valor -1
      * @param arrayBi
      */
-    static void ponerBlancos(int[][] arrayBi) // OK
+    static void ponerBlancos(int[][] arrayBi) 
     {
 
         for (int i = 0; i < arrayBi[0].length; i++) // Recorre las 3 filas
@@ -219,7 +225,7 @@ public class Bingo {
      * @param arrayBI,fila,posicion
      * @return esta
      */
-    static boolean buscarFila(int[][] arrayBi, int fila, int posicion) //OK
+    static boolean buscarFila(int[][] arrayBi, int fila, int posicion) 
     {
         boolean esta = false;
 
@@ -236,9 +242,9 @@ public class Bingo {
      * Busca el -1 en el array columna y devuelve true si el valor aparece dos
      * veces (es decir ya hay dos blancos y no se puede colocar)
      * @param arrayBI,posicionAleatoria
-     * @return esta
+     * @return esta2Veces
      */
-    static boolean buscarColumna(int[][] arrayBi, int posicionAleatoria) // OK
+    static boolean buscarColumna(int[][] arrayBi, int posicionAleatoria) 
     {
         boolean esta2Veces = false;
         int contador = 0;
@@ -266,7 +272,7 @@ public class Bingo {
      * @param array,elemento
      * @return esta
      */
-    static boolean buscarValorRepetido(int[] array, int elemento) // OK
+    static boolean buscarValorRepetido(int[] array, int elemento)
     {
         boolean esta = false;
 
@@ -285,8 +291,9 @@ public class Bingo {
     /**
      * Imprime el carton por pantalla
      * @param arrayBi,arrayBolas
+     * @return aciertos
      */
-    static int pintarCarton(int[][] arrayBi, int[] arrayBolas) // OK
+    static int pintarCarton(int[][] arrayBi, int[] arrayBolas)
     {
         int aciertos = 0;
 
@@ -325,7 +332,7 @@ public class Bingo {
      * @param array,elemento
      * @return nuevo
      */
-    static int[] insertarAlFinal(int[] array, int elemento) //OK
+    static int[] insertarAlFinal(int[] array, int elemento)
     {
         int[] nuevo = new int[array.length+1];
 
@@ -338,4 +345,17 @@ public class Bingo {
 
         return nuevo;
     }
+
+    /**
+     * Ordena el array de menor a mayor
+     * @param array
+     * @return array
+     */
+    static int[] ordenar(int[] array) 
+    {
+        Arrays.sort(array);
+
+        return array;
+    }
+
 }
