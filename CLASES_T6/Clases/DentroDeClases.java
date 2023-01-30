@@ -28,5 +28,25 @@ public class DentroDeClases {
         System.out.println("----------------------------------");
         System.out.println(persona2.toString());
 
+        persona1.cumplirAños();
+        System.out.println("Edad persona1: " + persona1.edad);
+
+        persona1.cambiarNombre("Juan");
+
+        Persona persona3 = new Persona();
+
+        persona3.copiarPersona(persona2);
+
+        String comoEstaP3 = persona3.QueDiaEs();
+
+        String comoEstanLasPersonas = Persona.QueDiaEs();
+
+
+        Persona persona4 = new Persona();
+        
+        System.out.println("Nombre persona4 = " + persona4.nombre);
+
+        Persona persona5 = new Persona("David", 25);
+
     }
 }
