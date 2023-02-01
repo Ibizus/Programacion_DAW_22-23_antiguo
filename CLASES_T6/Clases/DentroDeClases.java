@@ -37,9 +37,9 @@ public class DentroDeClases {
 
         persona3.copiarPersona(persona2);
 
-        String comoEstaP3 = persona3.QueDiaEs();
+        String comoEstaP3 = persona3.queDiaEs();
 
-        String comoEstanLasPersonas = Persona.QueDiaEs();
+        String comoEstanLasPersonas = Persona.queDiaEs();
 
 
         Persona persona4 = new Persona();
@@ -48,5 +48,33 @@ public class DentroDeClases {
 
         Persona persona5 = new Persona("David", 25);
 
+        Persona persona6 = new Persona("Pepe", "Lopez", 0, 0, null);
+    
+    
+        System.out.println(persona4.vivo);
+        System.out.println(Persona.vivo);
+
+        Persona.matarATodos();
+
+        System.out.println(persona4.vivo);
+        System.out.println(Persona.vivo);
+    
+        if (persona5.dni != null)
+        {
+            System.out.println("dni: " + persona5.dni);
+        }
+        else 
+        {
+            System.out.println("Aun no tiene dni");
+        }
+    
+        persona1.crearCuentaCorriente();
+        CuentaCorriente cc_Alfonso = persona1.cc;
+
+        System.out.println(cc_Alfonso); //Juan
+
+        cc_Alfonso.saldo = 20;
+        System.out.println(cc_Alfonso);
+    
     }
 }
