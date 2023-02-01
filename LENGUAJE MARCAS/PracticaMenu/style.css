@@ -18,7 +18,7 @@
     display: block;
     text-decoration: none;
     color: #333;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 
@@ -45,9 +45,9 @@
 }
 
 #menu2 li a {
-    padding: .2em 0 .2em .5em;
+    /*El padding derecho hace que se amplie la superficie del <a> */
+    padding: 0.2em 1.7em 0.2em; 
     text-decoration: none;
     color: #333;
-    border: 1px solid red;
-    /* display: block; */
+    /* border: 1px solid red; */
 }
