@@ -190,7 +190,7 @@ main{
 .art{
     border: #00a0bc solid 1em;
     text-align: center;
-        white-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
