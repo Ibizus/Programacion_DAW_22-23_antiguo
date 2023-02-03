@@ -6,6 +6,7 @@ public class CuentaCorriente {
     String dni;
     String nombreTitular;
     double saldo;
+    Gestor miGestor;
 
     // CONSTRUCTORES:
     public CuentaCorriente(String dni, String nombre)
@@ -29,6 +30,10 @@ public class CuentaCorriente {
 
 
     // METODOS:
+
+
+
+    
     public void sacarDinero(double dineroASacar)
     {
         if(dineroASacar < this.saldo)

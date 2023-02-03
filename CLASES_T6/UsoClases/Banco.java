@@ -1,6 +1,7 @@
 package CLASES_T6.UsoClases;
 
 import CLASES_T6.Clases.CuentaCorriente;
+import CLASES_T6.Clases.Gestor;
 
 public class Banco {
     public static void main(String[] args) {
@@ -35,5 +36,11 @@ public class Banco {
         System.out.println(cc_Javi);
 
 
+
+        Gestor luis_Gestor = new Gestor("Luis", "555-64532446");
+
+
+        cc_Andres.setGestor(luis_Gestor);
+        
     }
 }
