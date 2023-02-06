@@ -28,13 +28,11 @@ public class Banco {
         System.out.println(cc_Andres);
 
 
-
         CuentaCorriente cc_Sara = new CuentaCorriente("65473826K", 2500);
         System.out.println(cc_Sara);
 
         CuentaCorriente cc_Javi = new CuentaCorriente("65473826K", "Javi", 800);
         System.out.println(cc_Javi);
-
 
 
         Gestor luis_Gestor = new Gestor("Luis", "555-64532446");

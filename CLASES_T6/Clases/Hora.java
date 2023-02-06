@@ -9,6 +9,13 @@ public class Hora {
 
 
     // CONSTRUCTORES:
+    public Hora(int h)
+    {
+        this.hora = h;
+        this.minutos = 0;
+        this.segundos = 0;
+    }
+
     public Hora(int h, int seg)
     {
         if(hora>=0 && hora<=23)
