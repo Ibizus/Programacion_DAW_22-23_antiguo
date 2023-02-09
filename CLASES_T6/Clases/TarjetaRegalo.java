@@ -1,5 +1,7 @@
 package CLASES_T6.Clases;
 
+import java.text.DecimalFormat;
+
 public class TarjetaRegalo {
     
 
@@ -8,9 +10,9 @@ public class TarjetaRegalo {
     private int codigo;
 
     //CONSTRUCTORES
-    public TarjetaRegalo(int saldoInicial)
+    public TarjetaRegalo(double saldoInicial)
     {
-        this.codigo = (int)(Math.random()*99999+1);
+        this.codigo = (int)(Math.random()*100000);
         this.saldo = saldoInicial;
     }
 
@@ -27,15 +29,15 @@ public class TarjetaRegalo {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public void gasta(double cantidad)
     {
         if(this.getSaldo()<cantidad)
         {
             System.out.println("No tiene suficiente saldo para gastar " + cantidad + "€");
+        }
+        else if(cantidad<0)
+        {
+            System.out.println("No puedes gastar una cantidad negativa");
         }
         else 
         {
@@ -43,15 +45,26 @@ public class TarjetaRegalo {
         }
     }
 
-    public void fusionaCon(TarjetaRegalo t2)
+    public TarjetaRegalo fusionaCon(TarjetaRegalo t2)
     {
-        
+        // sumo los saldos de las tarjetas:
+        double total = this.getSaldo() + t2.getSaldo();
+
+        // vuelco el total en una nueva tarjeta:
+        TarjetaRegalo nueva = new TarjetaRegalo(total);
+
+        // Borro el saldo de las dos tarjetas anteriores:
+        this.setSaldo(0);
+        t2.setSaldo(0);
+
+        return nueva;
     }
 
     @Override
     public String toString()
     {
-        String desglose = "Tarjeta nº " + codigo + " - Saldo " + saldo + "€";
+        DecimalFormat df = new DecimalFormat("0.00");
+        String desglose = "Tarjeta nº " + this.codigo + " - Saldo " + df.format(this.getSaldo()) + "€";
         
         return desglose;
     }

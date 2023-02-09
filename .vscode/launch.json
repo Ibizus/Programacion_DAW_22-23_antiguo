@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UsoPoligonos17",
+            "request": "launch",
+            "mainClass": "CLASES_T6.UsoClases.UsoPoligonos17",
+            "projectName": "Programacion_DAW_22-23_4c6a5bf"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsoLineas",
+            "request": "launch",
+            "mainClass": "CLASES_T6.UsoClases.UsoLineas",
+            "projectName": "Programacion_DAW_22-23_4c6a5bf"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsoDomino",
+            "request": "launch",
+            "mainClass": "CLASES_T6.UsoClases.UsoDomino",
+            "projectName": "Programacion_DAW_22-23_4c6a5bf"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsoTarjetaRegalo",
+            "request": "launch",
+            "mainClass": "CLASES_T6.UsoClases.UsoTarjetaRegalo",
+            "projectName": "Programacion_DAW_22-23_4c6a5bf"
+        },
+        {
+            "type": "java",
             "name": "Launch UsoTerminal",
             "request": "launch",
             "mainClass": "CLASES_T6.UsoClases.UsoTerminal",
